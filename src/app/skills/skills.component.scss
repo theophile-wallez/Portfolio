@@ -1,0 +1,13 @@
+.tags-container {
+  user-select: none;
+  font-size: 1.3em;
+  & > * {
+    user-select: none;
+  }
+}
+.tagcloud {
+  user-select: none;
+}
+.tagcloud--item:hover {
+  color: green;
+}

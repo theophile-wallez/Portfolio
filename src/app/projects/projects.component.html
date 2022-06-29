@@ -1,0 +1,34 @@
+<div class="project-container" *ngFor="let project of projects">
+  <div class="project-content">
+    <h3 class="project-title">{{ project.title }}</h3>
+    <div class="tech-container">
+      <div class="tech-item" *ngFor="let techName of project.techs">
+        {{ techName }}
+      </div>
+    </div>
+    <div class="project-description">
+      {{ project.description }}
+    </div>
+  </div>
+  <div class="project-illustration">
+    <img [src]="project.imgSrc" [alt]="project.title + ' illustration'" />
+    <div
+      class="grey-fade"
+      (click)="openLink(project.projectLink ?? project.sourceCodeLink)"
+    >
+      <div class="go-to-site">
+        <span class="go-to-text">{{
+          project.projectLink
+            ? "Visit " + project.title
+            : project.title + "'s Github"
+        }}</span>
+
+        <i
+          *ngIf="project.projectLink"
+          class="fa-solid fa-arrow-up-right-from-square"
+        ></i>
+        <i *ngIf="!project.projectLink" class="fa-brands fa-github"></i>
+      </div>
+    </div>
+  </div>
+</div>

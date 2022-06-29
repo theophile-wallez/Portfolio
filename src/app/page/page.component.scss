@@ -1,0 +1,92 @@
+@import "../../variables.scss";
+
+.section {
+  position: relative;
+  width: 100%;
+  margin-bottom: 2em;
+  z-index: 2;
+}
+
+.items-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  .item-card {
+    position: relative;
+    height: 18em;
+    width: 30%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: all 0.3s ease;
+    min-width: 18em;
+    margin-bottom: 2.5em;
+    border-radius: 0.1em;
+    cursor: pointer;
+    z-index: 3;
+    background-color: $color-light;
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: rgba(100, 100, 111, 0.25) 0px 7px 29px 0px;
+    }
+  }
+  #background-text {
+    position: absolute;
+    right: -7rem;
+    top: -15rem;
+    z-index: 2;
+    color: $color-dark;
+    font-size: 20em;
+    font-weight: 600;
+
+    user-select: none;
+    transition: color 0.3s;
+    &.after-scroll {
+      color: #f0f0f08c;
+    }
+  }
+}
+#about {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .about-container {
+    width: 60%;
+
+    .about-content {
+      width: 100%;
+      font-size: 1.5em;
+    }
+  }
+  .skills-container {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: $color-dark;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

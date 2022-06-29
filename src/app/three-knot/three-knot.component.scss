@@ -1,0 +1,12 @@
+#three-container {
+  position: absolute;
+  top: -6em;
+  right: -7em;
+  width: 44em;
+  height: 44em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}

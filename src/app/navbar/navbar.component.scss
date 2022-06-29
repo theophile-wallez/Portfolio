@@ -1,0 +1,122 @@
+$header-height: 3.5rem;
+$header-width: 70%;
+header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  max-width: 1080px;
+  height: $header-height;
+  top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  #header-menu {
+    font-size: 1.3em;
+    font-weight: 600;
+    user-select: none;
+    position: relative;
+    height: 100%;
+    width: $header-width;
+    border-radius: 1.75rem;
+    transition: background-color 0.4s;
+    background-color: rgba(18, 19, 22, 0.8);
+
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0em 0.65rem;
+    $logo-size: 2.2rem;
+    .logo-container {
+      cursor: pointer;
+      user-select: none;
+      width: $logo-size;
+      height: $logo-size;
+      border-radius: 1.1rem;
+      background-color: blue;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s;
+      img {
+        user-select: none;
+        width: 1000%;
+        height: 1000%;
+        animation: moveBackgroundCircle 50s linear 0s infinite normal;
+      }
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .links-container {
+      margin-left: 2em;
+      height: 3em;
+      display: flex;
+      align-items: center;
+
+      .link {
+        cursor: pointer;
+        margin-right: 0.3em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 0 1em;
+        transition: color 0.2s ease;
+
+        color: hsla(0, 0%, 100%, 0.4);
+        &:hover {
+          color: hsla(0, 0%, 100%, 1);
+        }
+      }
+    }
+
+    .contact-btn {
+      margin-left: auto;
+      cursor: pointer;
+
+      background-color: hsla(0, 0%, 100%, 0.05);
+
+      height: 2.2rem;
+      border-radius: 1.1rem;
+      padding: 0 1em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+
+      color: hsla(0, 0%, 100%, 0.4);
+      &:hover {
+        color: hsla(0, 0%, 100%, 1);
+      }
+    }
+    &.after-scroll {
+      background-color: rgba(226, 225, 225, 0.6);
+      .links-container .link {
+        color: hsla(0, 0%, 0%, 0.5);
+        &:hover {
+          color: hsla(0, 0%, 0%, 1);
+        }
+      }
+      .contact-btn {
+        background-color: #248aff;
+        color: white;
+        &:hover {
+          background-color: #1d76db;
+        }
+      }
+    }
+  }
+}
+
+@keyframes moveBackgroundCircle {
+  0% {
+    transform: rotate(0deg) translateX(100px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+  }
+}
