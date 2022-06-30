@@ -9,32 +9,34 @@ export class AppComponent implements OnInit {
   title = 'portfolio';
   constructor() {}
 
-  heroBackground!: HTMLElement | null;
-  heroContent!: HTMLElement | null;
-  header!: HTMLElement | null;
-  backgroundText!: HTMLElement | null;
+  // heroBackground!: HTMLElement | null;
+  // heroContent!: HTMLElement | null;
+  // header!: HTMLElement | null;
+  // backgroundText!: HTMLElement | null;
+
+  elementsToChange: any[] = [];
   ngAfterViewInit(): void {
-    this.heroBackground = document.getElementById('hero-full-width');
-    this.heroContent = document.getElementById('hero-content');
-    this.header = document.getElementById('header-menu');
-    this.backgroundText = document.getElementById('background-text');
+    this.elementsToChange.push(document.getElementById('hero-content'));
+    this.elementsToChange.push(document.getElementById('header-menu'));
+    this.elementsToChange.push(document.getElementById('background-text'));
+    this.elementsToChange.push(document.getElementById('hero-full-width'));
+    console.log('this.elementsToChange: ', this.elementsToChange);
   }
   ngOnInit(): void {
     window.addEventListener('scroll', this.onWindowScroll.bind(this));
   }
+
   onWindowScroll() {
-    let newClass: string = 'after-scroll';
+    let afterScrollClass: string = 'after-scroll';
     let scroll: number = window.scrollY;
     if (scroll >= 50) {
-      this.heroBackground?.classList.add(newClass);
-      this.heroContent?.classList.add(newClass);
-      this.header?.classList.add(newClass);
-      this.backgroundText?.classList.add(newClass);
+      this.elementsToChange.forEach((element) => {
+        element?.classList.add(afterScrollClass);
+      });
     } else {
-      this.heroBackground?.classList.remove(newClass);
-      this.heroContent?.classList.remove(newClass);
-      this.header?.classList.remove(newClass);
-      this.backgroundText?.classList.remove(newClass);
+      this.elementsToChange.forEach((element) => {
+        element?.classList.remove(afterScrollClass);
+      });
     }
   }
 }
