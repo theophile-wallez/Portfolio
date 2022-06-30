@@ -17,15 +17,13 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor() {}
   @ViewChild('threeContainer') threeContainer!: ElementRef;
 
-  hero!: HTMLElement | null;
+  heroMouseTrackDiv!: HTMLElement | null;
 
   camera!: THREE.PerspectiveCamera;
   scene!: THREE.Scene;
   renderer!: THREE.WebGLRenderer;
 
   torusMesh!: THREE.Mesh;
-  ambientLight!: THREE.AmbientLight;
-
   meshTexture!: THREE.Texture;
   normalTexture!: THREE.Texture;
 
@@ -41,8 +39,8 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.hero = document.getElementById('hero-full-width');
-    this.hero?.addEventListener(
+    this.heroMouseTrackDiv = document.getElementById('hero-full-width');
+    this.heroMouseTrackDiv?.addEventListener(
       'mousemove',
       this.onDocumentMouseMove.bind(this),
       false
@@ -85,13 +83,16 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
 
     //! LIGHTING
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff);
-    directionalLight.intensity = 0.9;
+    let ambientLight: THREE.AmbientLight = new THREE.AmbientLight(0xffffff);
+    ambientLight.intensity = 0.7;
+
+    let directionalLight: THREE.DirectionalLight = new THREE.DirectionalLight(
+      0xffffff
+    );
+    directionalLight.intensity = 0.7;
     directionalLight.position.set(90, 0, 10);
 
-    this.ambientLight = new THREE.AmbientLight(0xffffff);
-    this.ambientLight.intensity = 0.9;
-    this.scene.add(directionalLight, this.ambientLight);
+    this.scene.add(directionalLight, ambientLight);
 
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.outputEncoding = THREE.sRGBEncoding;
@@ -101,11 +102,18 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
     requestAnimationFrame(this.animate.bind(this));
     this.render();
   }
-
   render() {
     this.offSetMeshTexture();
-    this.torusMesh.rotation.x += this.rotateY * this.screenRatio;
-    this.torusMesh.rotation.y -= this.rotateX / (1 - this.screenRatio);
+
+    var xAxis = new THREE.Vector3(1, 0, 0);
+    var yAxis = new THREE.Vector3(0, 1, 0);
+
+    this.torusMesh.rotateOnWorldAxis(xAxis, this.rotateY * this.screenRatio);
+    this.torusMesh.rotateOnWorldAxis(
+      yAxis,
+      -this.rotateX / (1 - this.screenRatio)
+    );
+
     this.renderer.render(this.scene, this.camera);
   }
 
@@ -136,11 +144,12 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
     );
   }
 
+  mouseSpeedCoefficient: number = 0.00001;
   onDocumentMouseMove(mouseEvent: MouseEvent) {
-    if (!this.hero) return;
-    let centerX: number = 0.5 * this.hero.offsetWidth;
-    let centerY: number = 0.5 * this.hero.offsetHeight;
-    this.rotateX = (mouseEvent.x - centerX) * 0.00001;
-    this.rotateY = (mouseEvent.y - centerY) * 0.00001;
+    if (!this.heroMouseTrackDiv) return;
+    let centerX: number = 0.5 * this.heroMouseTrackDiv.offsetWidth;
+    let centerY: number = 0.5 * this.heroMouseTrackDiv.offsetHeight;
+    this.rotateX = (mouseEvent.x - centerX) * this.mouseSpeedCoefficient;
+    this.rotateY = (mouseEvent.y - centerY) * this.mouseSpeedCoefficient;
   }
 }

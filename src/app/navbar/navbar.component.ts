@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
   scrollTo(elementName?: string) {
     let yScroll: number = 0;
     if (elementName) {
+      console.log('elementName: ', elementName);
       let element: HTMLElement | null = document.getElementById(elementName);
       if (!element) return;
       yScroll = element.getBoundingClientRect().top + window.scrollY - 30;
