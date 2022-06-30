@@ -14,7 +14,11 @@
     <img [src]="project.imgSrc" [alt]="project.title + ' illustration'" />
     <div
       class="grey-fade"
-      (click)="openLink(project.projectLink ?? project.sourceCodeLink)"
+      (click)="
+        openLink(
+          project.projectLink ? project.projectLink : project.sourceCodeLink
+        )
+      "
     >
       <div class="go-to-site">
         <span class="go-to-text">{{

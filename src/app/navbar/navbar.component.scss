@@ -42,9 +42,10 @@ header {
       transition: transform 0.4s;
       img {
         user-select: none;
-        width: 1000%;
-        height: 1000%;
+        width: 500%;
+        height: 500%;
         animation: moveBackgroundCircle 90s linear 0s infinite normal;
+        filter: blur(5px) saturate(200%);
       }
       &:hover {
         transform: scale(1.1);
@@ -114,9 +115,9 @@ header {
 
 @keyframes moveBackgroundCircle {
   0% {
-    transform: rotate(0deg) translateX(100px) rotate(0deg);
+    transform: rotate(0deg) translateX(50px) rotate(0deg);
   }
   100% {
-    transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    transform: rotate(360deg) translateX(50px) rotate(-360deg);
   }
 }
