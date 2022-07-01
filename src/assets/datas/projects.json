@@ -3,7 +3,7 @@
     "title": "My portfolio",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
     "techs": ["Angular", "Express.js", "Three.js"],
-    "imgSrc": "/../../assets/img/portfolio.png",
+    "imgSrc": "/../../assets/img/portfolio.webp",
     "sourceCodeLink": "https://github.com/theophileWallez/Portfolio"
   },
   {
@@ -17,7 +17,7 @@
       "PrimeNg",
       "Swagger"
     ],
-    "imgSrc": "/../../assets/img/rbnb.png",
+    "imgSrc": "/../../assets/img/rbnb.webp",
     "sourceCodeLink": "https://github.com/theophileWallez/rBNB",
     "projectLink": "https://rbnb-project.herokuapp.com/"
   },
@@ -25,7 +25,7 @@
     "title": "Psycaptr",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
     "techs": ["Javascript", "PHP", "SQL", "HTML", "CSS"],
-    "imgSrc": "/../../assets/img/psycaptr.png",
+    "imgSrc": "/../../assets/img/psycaptr.webp",
     "sourceCodeLink": "https://github.com/theophileWallez/rBNB",
     "projectLink": "https://psycaptr.inovaperf.me/"
   },
@@ -33,14 +33,14 @@
     "title": "Mr Jack Pocket",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
     "techs": ["Java", "Java Swing"],
-    "imgSrc": "/../../assets/img/mrjackpocket-2.png",
+    "imgSrc": "/../../assets/img/mrjackpocket.webp",
     "sourceCodeLink": "https://github.com/theophileWallez/rBNB"
   },
   {
     "title": "Space in ISEP",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
     "techs": ["Java", "JavaFx"],
-    "imgSrc": "/../../assets/img/spaceinisep.png",
+    "imgSrc": "/../../assets/img/spaceinisep.webp",
     "sourceCodeLink": "https://github.com/theophileWallez/SpaceInIsep"
   }
 ]
