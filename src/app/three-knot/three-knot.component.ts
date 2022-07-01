@@ -119,7 +119,7 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
 
   handleMeshTexture() {
     this.meshTexture = new THREE.TextureLoader().load(
-      '../../assets/textures/texture-3.png'
+      '../../assets/textures/texture.png'
     );
 
     this.meshTexture.encoding = THREE.sRGBEncoding;
@@ -128,7 +128,7 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.meshTexture.repeat.set(2, 2);
 
     this.normalTexture = new THREE.TextureLoader().load(
-      '../../assets/textures/normal-2.png'
+      '../../assets/textures/normal.png'
     );
 
     this.normalTexture.wrapS = this.normalTexture.wrapT =
