@@ -12,26 +12,25 @@
   </div>
   <div class="project-illustration">
     <img [src]="project.imgSrc" [alt]="project.title + ' illustration'" />
-    <div
-      class="grey-fade"
-      (click)="
-        openLink(
-          project.projectLink ? project.projectLink : project.sourceCodeLink
-        )
-      "
-    >
-      <div class="go-to-site">
-        <span class="go-to-text">{{
-          project.projectLink
-            ? "Visit " + project.title
-            : project.title + "'s Github"
-        }}</span>
-
+    <div class="grey-fade">
+      <div
+        class="go-to-site"
+        (click)="
+          openLink(
+            project.projectLink ? project.projectLink : project.sourceCodeLink
+          )
+        "
+      >
         <i
           *ngIf="project.projectLink"
           class="fa-solid fa-arrow-up-right-from-square"
         ></i>
         <i *ngIf="!project.projectLink" class="fa-brands fa-github"></i>
+        <span class="go-to-text">{{
+          project.projectLink
+            ? "Visit " + project.title + "'s website"
+            : "Visit " + project.title + "'s Github"
+        }}</span>
       </div>
     </div>
   </div>

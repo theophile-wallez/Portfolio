@@ -7,7 +7,7 @@ $transition-time: 0.4s;
   position: fixed;
   top: 0;
   width: 100vw;
-  height: 120vh;
+  height: 100vh;
   left: 50%;
   transform: translateX(-50%);
   transition: background-color $transition-time;
@@ -33,6 +33,7 @@ $transition-time: 0.4s;
     transition: color $transition-time;
     #hero-content {
       position: relative;
+      box-sizing: border-box;
       padding-top: 1.7em;
       width: 100%;
       font-size: 6em;
