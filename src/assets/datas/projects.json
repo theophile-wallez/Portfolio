@@ -2,14 +2,7 @@
   {
     "title": "rBnb",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
-    "techs": [
-      "Angular",
-      "Java",
-      "Spring Boot",
-      "Firebase",
-      "PrimeNg",
-      "Swagger"
-    ],
+    "techs": ["Angular", "Java Spring", "Firebase", "Swagger"],
     "imgSrc": "/../../assets/img/rbnb.webp",
     "sourceCodeLink": "https://github.com/theophileWallez/rBNB",
     "projectLink": "https://rbnb-project.herokuapp.com/"
