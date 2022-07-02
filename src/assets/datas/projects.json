@@ -1,12 +1,5 @@
 [
   {
-    "title": "My portfolio",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
-    "techs": ["Angular", "Express.js", "Three.js"],
-    "imgSrc": "/../../assets/img/portfolio.webp",
-    "sourceCodeLink": "https://github.com/theophileWallez/Portfolio"
-  },
-  {
     "title": "rBnb",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
     "techs": [
