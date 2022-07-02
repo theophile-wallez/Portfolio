@@ -111,7 +111,7 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.torusMesh.rotateOnWorldAxis(xAxis, this.rotateY * this.screenRatio);
     this.torusMesh.rotateOnWorldAxis(
       yAxis,
-      -this.rotateX / (1 - this.screenRatio)
+      this.rotateX / (1 - 1 / this.screenRatio)
     );
 
     this.renderer.render(this.scene, this.camera);
