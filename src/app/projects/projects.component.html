@@ -9,6 +9,22 @@
     <div class="project-description">
       {{ project.description }}
     </div>
+    <div class="btn-container">
+      <div class="visit-btn" (click)="openLink(project.sourceCodeLink)">
+        <i class="fa-brands fa-github"></i>
+        <div *ngIf="!project.projectLink" class="btn-text">
+          View project's repository
+        </div>
+      </div>
+      <div
+        *ngIf="project.projectLink"
+        class="visit-btn"
+        (click)="openLink(project.projectLink)"
+      >
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <div class="btn-text">Visit website</div>
+      </div>
+    </div>
   </div>
   <div class="project-illustration">
     <img [src]="project.imgSrc" [alt]="project.title + ' illustration'" />

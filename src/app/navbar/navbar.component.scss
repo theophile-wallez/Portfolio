@@ -68,7 +68,7 @@ header {
         padding: 0 1em;
         transition: color 0.2s ease;
 
-        color: hsla(0, 0%, 100%, 0.4);
+        color: hsla(0, 0%, 100%, 0.5);
         &:hover {
           color: hsla(0, 0%, 100%, 1);
         }
@@ -89,7 +89,7 @@ header {
       justify-content: center;
       transition: all 0.2s ease;
 
-      color: hsla(0, 0%, 100%, 0.4);
+      color: hsla(0, 0%, 100%, 0.5);
       &:hover {
         color: hsla(0, 0%, 100%, 1);
       }
