@@ -1,21 +1,22 @@
-<form>
+<form [formGroup]="contactForm">
   <div class="first-lign">
     <span class="p-float-label">
-      <input id="float-input" type="text" pInputText />
+      <input formControlName="name" id="float-input" type="text" pInputText />
       <label for="float-input">Name</label>
     </span>
 
     <span class="p-float-label">
-      <input id="float-input" type="text" pInputText />
+      <input formControlName="email" id="float-input" type="email" pInputText />
       <label for="float-input">Email</label>
     </span>
   </div>
   <span class="p-float-label">
-    <input id="float-input" type="text" pInputText />
+    <input formControlName="subject" id="float-input" type="text" pInputText />
     <label for="float-input">Subject</label>
   </span>
   <span class="p-float-label">
     <textarea
+      formControlName="message"
       id="float-input"
       [rows]="5"
       [cols]="30"
@@ -24,8 +25,8 @@
     ></textarea>
     <label for="float-input">Message</label>
   </span>
-
+  <!-- [disabled]="contactForm.invalid" -->
   <div class="btn-container">
-    <div class="submit" (click)="submit()">Send message</div>
+    <p-button label="Send message" (click)="submit()"></p-button>
   </div>
 </form>

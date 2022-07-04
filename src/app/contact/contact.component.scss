@@ -2,13 +2,26 @@ form {
   width: 100%;
   font-size: 1.1em;
 
+  label {
+    user-select: none;
+  }
+
   textarea,
   .p-float-label {
     width: 100%;
-    margin-bottom: 1.5rem;
+  }
+  .p-float-label {
+    margin-bottom: 1.8rem;
     input {
       width: 100%;
     }
+  }
+  textarea:focus ~ label,
+  input:focus ~ label,
+  input.p-filled ~ label,
+  textarea.p-filled ~ label {
+    font-size: 0.9em;
+    top: -0.9em;
   }
 
   .first-lign {
@@ -20,6 +33,7 @@ form {
   }
 
   .btn-container {
+    user-select: none;
     display: flex;
     justify-content: flex-end;
   }
