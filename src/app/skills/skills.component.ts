@@ -19,6 +19,5 @@ export class SkillsComponent implements OnInit {
   async getSkills() {
     let response: Response = await fetch('../../assets/datas/skills.json');
     this.skills = await response.json();
-    console.log(' this.skills : ', this.skills);
   }
 }
