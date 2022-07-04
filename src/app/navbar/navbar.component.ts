@@ -10,15 +10,12 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  scrollTo(elementName?: string) {
+  scrollTo(elementName?: string): void {
     let yScroll: number = 0;
-
     if (elementName) {
-      console.log('elementName: ', elementName);
       let element: HTMLElement | null = document.getElementById(elementName);
       if (!element) return;
       yScroll = element.getBoundingClientRect().top + window.scrollY - 70;
-      console.log(elementName, element.getBoundingClientRect().top);
     }
 
     window.scroll({

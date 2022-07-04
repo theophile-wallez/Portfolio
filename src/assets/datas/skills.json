@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Angular",
+    "imgSource": "/../../assets/img/skills/angular.svg"
+  },
+  {
+    "name": "Typescript",
+    "imgSource": "/../../assets/img/skills/typescript.svg"
+  },
+  {
+    "name": "Java Spring",
+    "imgSource": "/../../assets/img/skills/spring.svg"
+  },
+  {
+    "name": "SQL",
+    "imgSource": "/../../assets/img/skills/mysql.svg"
+  },
+  {
+    "name": "Firebase",
+    "imgSource": "/../../assets/img/skills/firebase.svg"
+  },
+
+  {
+    "name": "Sass",
+    "imgSource": "/../../assets/img/skills/sass.svg"
+  }
+]

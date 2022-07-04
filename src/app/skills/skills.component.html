@@ -1,1 +1,8 @@
-<span class="skills-cloud"></span>
+<div class="skills-container">
+  <div *ngFor="let skill of skills" class="skill">
+    <div class="skill-logo">
+      <img [src]="skill.imgSource" [alt]="skill.name" draggable="false" />
+    </div>
+    <div class="skill-name">{{ skill.name }}</div>
+  </div>
+</div>

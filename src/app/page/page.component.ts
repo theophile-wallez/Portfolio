@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import AOS from 'aos';
+
 @Component({
   selector: 'page',
   templateUrl: './page.component.html',
@@ -7,5 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class PageComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    AOS.init();
+  }
 }
