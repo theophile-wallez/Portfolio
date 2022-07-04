@@ -9,6 +9,10 @@ import { PageComponent } from './page/page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ContactComponent } from './contact/contact.component';
+
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -19,8 +23,14 @@ import { ProjectsComponent } from './projects/projects.component';
     NavbarComponent,
     SkillsComponent,
     ProjectsComponent,
+    ContactComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    InputTextModule,
+    InputTextareaModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -90,3 +90,24 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+#contact {
+  .contact-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+
+    .other {
+      width: 30%;
+      height: 8em;
+      background-color: red;
+      z-index: 20;
+    }
+    contact {
+      min-width: min-content;
+      width: 60%;
+      flex-shrink: 0;
+    }
+  }
+}

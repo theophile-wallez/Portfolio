@@ -1,0 +1,31 @@
+<form>
+  <div class="first-lign">
+    <span class="p-float-label">
+      <input id="float-input" type="text" pInputText />
+      <label for="float-input">Name</label>
+    </span>
+
+    <span class="p-float-label">
+      <input id="float-input" type="text" pInputText />
+      <label for="float-input">Email</label>
+    </span>
+  </div>
+  <span class="p-float-label">
+    <input id="float-input" type="text" pInputText />
+    <label for="float-input">Subject</label>
+  </span>
+  <span class="p-float-label">
+    <textarea
+      id="float-input"
+      [rows]="5"
+      [cols]="30"
+      pInputTextarea
+      [autoResize]="true"
+    ></textarea>
+    <label for="float-input">Message</label>
+  </span>
+
+  <div class="btn-container">
+    <div class="submit" (click)="submit()">Send message</div>
+  </div>
+</form>

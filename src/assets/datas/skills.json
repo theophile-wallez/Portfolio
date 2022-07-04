@@ -1,27 +1,27 @@
 [
   {
     "name": "Angular",
-    "imgSource": "/../../assets/img/skills/angular.svg"
+    "imgSource": "angular.svg"
   },
   {
     "name": "Typescript",
-    "imgSource": "/../../assets/img/skills/typescript.svg"
+    "imgSource": "typescript.svg"
   },
   {
     "name": "Java Spring",
-    "imgSource": "/../../assets/img/skills/spring.svg"
+    "imgSource": "spring.svg"
   },
   {
     "name": "SQL",
-    "imgSource": "/../../assets/img/skills/mysql.svg"
+    "imgSource": "mysql.svg"
   },
   {
     "name": "Firebase",
-    "imgSource": "/../../assets/img/skills/firebase.svg"
+    "imgSource": "firebase.svg"
   },
 
   {
     "name": "Sass",
-    "imgSource": "/../../assets/img/skills/sass.svg"
+    "imgSource": "sass.svg"
   }
 ]

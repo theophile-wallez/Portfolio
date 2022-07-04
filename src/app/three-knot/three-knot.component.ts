@@ -13,11 +13,9 @@ import * as THREE from 'three';
   templateUrl: './three-knot.component.html',
   styleUrls: ['./three-knot.component.scss'],
 })
-export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
+export class ThreeKnotComponent implements OnInit, AfterViewInit {
   constructor() {}
   @ViewChild('threeContainer') threeContainer!: ElementRef;
-
-  heroMouseTrackDiv!: HTMLElement | null;
 
   camera!: THREE.PerspectiveCamera;
   scene!: THREE.Scene;
@@ -39,8 +37,7 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    this.heroMouseTrackDiv = document.getElementById('hero-full-width');
-    this.heroMouseTrackDiv?.addEventListener(
+    window.addEventListener(
       'mousemove',
       this.onDocumentMouseMove.bind(this),
       false
@@ -54,10 +51,6 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
     this.screenRatio = Math.round(window.innerWidth / window.innerHeight);
 
     this.threeContainer.nativeElement.appendChild(this.renderer.domElement);
-  }
-
-  ngOnDestroy(): void {
-    this.threeContainer.nativeElement.removeEventListener();
   }
 
   initTheeScene() {
@@ -108,11 +101,8 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
     var xAxis = new THREE.Vector3(1, 0, 0);
     var yAxis = new THREE.Vector3(0, 1, 0);
 
-    this.torusMesh.rotateOnWorldAxis(xAxis, this.rotateY * this.screenRatio);
-    this.torusMesh.rotateOnWorldAxis(
-      yAxis,
-      this.rotateX / (1 - 1 / this.screenRatio)
-    );
+    this.torusMesh.rotateOnWorldAxis(xAxis, this.rotateY);
+    this.torusMesh.rotateOnWorldAxis(yAxis, this.rotateX);
 
     this.renderer.render(this.scene, this.camera);
   }
@@ -144,12 +134,15 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit, OnDestroy {
     );
   }
 
-  mouseSpeedCoefficient: number = 0.00001;
+  mouseSpeedCoefficient: number = 0.015;
   onDocumentMouseMove(mouseEvent: MouseEvent) {
-    if (!this.heroMouseTrackDiv) return;
-    let centerX: number = 0.5 * this.heroMouseTrackDiv.offsetWidth;
-    let centerY: number = 0.5 * this.heroMouseTrackDiv.offsetHeight;
-    this.rotateX = (mouseEvent.x - centerX) * this.mouseSpeedCoefficient;
-    this.rotateY = (mouseEvent.y - centerY) * this.mouseSpeedCoefficient;
+    let centerX: number = 0.5 * window.innerWidth;
+    let centerY: number = 0.5 * window.innerHeight;
+    this.rotateX =
+      ((mouseEvent.x - centerX) / (window.innerWidth / 2)) *
+      this.mouseSpeedCoefficient;
+    this.rotateY =
+      ((mouseEvent.y - centerY) / (window.innerWidth / 2)) *
+      this.mouseSpeedCoefficient;
   }
 }

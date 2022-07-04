@@ -1,23 +1,21 @@
 .skills-container {
   margin-top: 2rem;
-
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   .skill {
-    // padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-right: 5rem;
+    margin-right: 4rem;
     margin-bottom: 3rem;
 
     &:last-child {
       margin-right: 0;
     }
     .skill-logo {
-      height: 7rem;
+      height: 7.5rem;
       display: flex;
       justify-content: center;
       align-items: center;

@@ -1,0 +1,26 @@
+form {
+  width: 100%;
+  font-size: 1.1em;
+
+  textarea,
+  .p-float-label {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    input {
+      width: 100%;
+    }
+  }
+
+  .first-lign {
+    display: flex;
+    justify-content: space-between;
+    .p-float-label:first-child {
+      margin-right: 2rem;
+    }
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

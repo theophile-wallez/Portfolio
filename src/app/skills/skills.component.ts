@@ -9,6 +9,7 @@ export interface Skill {
   styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent implements OnInit {
+  skillsIconsFolderPath: string = '/../../assets/img/skills/';
   skills: Skill[] = [];
 
   ngOnInit(): void {
