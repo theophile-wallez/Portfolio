@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   ngAfterViewInit(): void {
     this.elementsToChange.push(document.getElementById('hero-content'));
     this.elementsToChange.push(document.getElementById('header-menu'));
-    this.elementsToChange.push(document.getElementById('hero-full-width'));
+    this.elementsToChange.push(document.body);
   }
   ngOnInit(): void {
     window.addEventListener('scroll', this.onWindowScroll.bind(this));

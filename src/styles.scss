@@ -14,13 +14,20 @@ body {
   font-size: 16px;
   color: $color-dark;
   overflow-x: hidden;
+  background-color: #121316;
+  transition: background-color $scroll-transition-time;
+  ::selection {
+    background-color: rgb(204, 204, 204);
+  }
+  &.after-scroll {
+    background-color: white;
+    ::selection {
+      background-color: #181a1d1f;
+    }
+  }
 }
 
-::selection {
-  background-color: #181a1d1f;
-}
-
-.center {
+body.after-scroll .center {
   max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
