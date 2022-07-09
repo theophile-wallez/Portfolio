@@ -16,7 +16,7 @@ export interface Project {
 })
 export class ProjectsComponent implements OnInit {
   constructor() {}
-
+  gitHubLink: string = 'https://github.com/theophile-wallez/';
   projects: Project[] = [];
   ngOnInit(): void {
     this.getProjectData();

@@ -4,7 +4,7 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
     "techs": ["Angular", "Java Spring", "Firebase", "Swagger"],
     "imgSrc": "/../../assets/img/projects/rbnb.webp",
-    "sourceCodeLink": "https://github.com/theophileWallez/rBNB",
+    "sourceCodeLink": "rBNB",
     "projectLink": "https://rbnb-project.herokuapp.com/"
   },
   {
@@ -12,7 +12,7 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
     "techs": ["Javascript", "PHP", "SQL", "HTML", "CSS"],
     "imgSrc": "/../../assets/img/projects/psycaptr.webp",
-    "sourceCodeLink": "https://github.com/theophileWallez/rBNB",
+    "sourceCodeLink": "rBNB",
     "projectLink": "https://psycaptr.inovaperf.me/"
   },
   {
@@ -20,13 +20,13 @@
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
     "techs": ["Java", "Java Swing"],
     "imgSrc": "/../../assets/img/projects/mrjackpocket.webp",
-    "sourceCodeLink": "https://github.com/theophileWallez/rBNB"
+    "sourceCodeLink": "rBNB"
   },
   {
     "title": "Space in ISEP",
     "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
     "techs": ["Java", "JavaFx"],
     "imgSrc": "/../../assets/img/projects/spaceinisep.webp",
-    "sourceCodeLink": "https://github.com/theophileWallez/SpaceInIsep"
+    "sourceCodeLink": "SpaceInIsep"
   }
 ]

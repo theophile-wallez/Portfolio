@@ -27,8 +27,8 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit {
 
   textureOffset: number = 0;
 
-  rotateX: number = 0;
-  rotateY: number = 0.0015;
+  rotateX: number = 0.003;
+  rotateY: number = 0.004;
   screenRatio: number = 16 / 9;
 
   ngOnInit(): void {
@@ -134,7 +134,7 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit {
     );
   }
 
-  mouseSpeedCoefficient: number = 0.015;
+  mouseSpeedCoefficient: number = 0.01;
   onDocumentMouseMove(mouseEvent: MouseEvent) {
     let centerX: number = 0.5 * window.innerWidth;
     let centerY: number = 0.5 * window.innerHeight;

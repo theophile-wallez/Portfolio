@@ -10,7 +10,10 @@
       {{ project.description }}
     </div>
     <div class="btn-container">
-      <div class="visit-btn" (click)="openLink(project.sourceCodeLink)">
+      <div
+        class="visit-btn"
+        (click)="openLink(gitHubLink + project.sourceCodeLink)"
+      >
         <i class="fa-brands fa-github"></i>
         <div *ngIf="!project.projectLink" class="btn-text">
           Visit project's repository
@@ -33,7 +36,9 @@
         class="go-to-site"
         (click)="
           openLink(
-            project.projectLink ? project.projectLink : project.sourceCodeLink
+            project.projectLink
+              ? project.projectLink
+              : gitHubLink + project.sourceCodeLink
           )
         "
       >

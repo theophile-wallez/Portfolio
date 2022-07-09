@@ -92,15 +92,55 @@
     flex-wrap: wrap;
     margin-top: 2rem;
 
-    .other {
-      width: 30%;
-      height: 8em;
-      z-index: 20;
-    }
     contact {
       min-width: min-content;
       width: 60%;
       flex-shrink: 0;
+    }
+  }
+  .contact-infos-container {
+    width: 30%;
+    .contact-info {
+      margin-left: 0.8rem;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.3rem;
+      cursor: pointer;
+      i {
+        font-size: 1.5rem;
+        user-select: none;
+      }
+      .link-text {
+        font-weight: 500;
+        font-size: 1.4rem;
+        margin-left: 1.1rem;
+      }
+      &:hover .link-text {
+        text-decoration: underline;
+      }
+    }
+    .cv-btn {
+      padding: 0.6rem 1rem;
+      background-color: $color-dark;
+      color: $color-light;
+      display: flex;
+      width: fit-content;
+      border-radius: 0.3rem;
+      user-select: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      i {
+        font-size: 1.3rem;
+      }
+      .text {
+        font-size: 1.2rem;
+        margin-left: 1rem;
+      }
+
+      &:hover {
+        transform: scale(1.02);
+      }
     }
   }
 }
