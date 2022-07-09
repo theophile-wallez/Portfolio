@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  AbstractControl,
+} from '@angular/forms';
 
 @Component({
   selector: 'contact',
@@ -24,4 +29,12 @@ export class ContactComponent implements OnInit {
   }
 
   submit() {}
+
+  get email(): AbstractControl | null {
+    return this.contactForm.get('email');
+  }
+
+  get message(): AbstractControl | null {
+    return this.contactForm.get('message');
+  }
 }

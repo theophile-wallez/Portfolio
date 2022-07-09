@@ -31,33 +31,27 @@
       box-shadow: rgba(100, 100, 111, 0.25) 0px 7px 29px 0px;
     }
   }
-  #background-text {
-    position: absolute;
-    right: -7rem;
-    top: -15rem;
-    z-index: 2;
-    color: $color-dark;
-    font-size: 20em;
-    font-weight: 600;
-
-    user-select: none;
-    transition: color 0.3s;
-    &.after-scroll {
-      color: #f0f0f08c;
-    }
-  }
 }
 #about {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  height: 100%;
+
   .about-container {
-    width: 60%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    & > * {
+      width: 45%;
+    }
 
     .about-content {
-      width: 100%;
+      // width: 50%;
       font-size: 1.5em;
+    }
+
+    work-experience {
+      height: 20rem;
     }
   }
   .skills-container {
@@ -101,7 +95,6 @@
     .other {
       width: 30%;
       height: 8em;
-      background-color: red;
       z-index: 20;
     }
     contact {

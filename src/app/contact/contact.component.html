@@ -1,32 +1,71 @@
 <form [formGroup]="contactForm">
   <div class="first-lign">
+    <div class="input-container">
+      <span class="p-float-label">
+        <input formControlName="name" id="float-input" type="text" pInputText />
+        <label for="float-input">Name</label>
+      </span>
+    </div>
+    <div class="input-container">
+      <span class="p-float-label">
+        <input
+          formControlName="email"
+          id="float-input"
+          type="text"
+          pInputText
+          [required]="true"
+          reflect-required="false"
+        />
+        <label for="float-input" class="label-required">Email</label>
+      </span>
+      <small
+        *ngIf="email && email.touched && email.hasError('required')"
+        class="p-error block"
+        >The email field can not be empty</small
+      >
+      <small
+        *ngIf="email && email.touched && email.hasError('email')"
+        class="p-error block"
+        >The email provided is not a correct email
+      </small>
+    </div>
+  </div>
+  <div class="input-container">
     <span class="p-float-label">
-      <input formControlName="name" id="float-input" type="text" pInputText />
-      <label for="float-input">Name</label>
-    </span>
-
-    <span class="p-float-label">
-      <input formControlName="email" id="float-input" type="email" pInputText />
-      <label for="float-input">Email</label>
+      <input
+        formControlName="subject"
+        id="float-input"
+        type="text"
+        pInputText
+      />
+      <label for="float-input">Subject</label>
     </span>
   </div>
-  <span class="p-float-label">
-    <input formControlName="subject" id="float-input" type="text" pInputText />
-    <label for="float-input">Subject</label>
-  </span>
-  <span class="p-float-label">
-    <textarea
-      formControlName="message"
-      id="float-input"
-      [rows]="5"
-      [cols]="30"
-      pInputTextarea
-      [autoResize]="true"
-    ></textarea>
-    <label for="float-input">Message</label>
-  </span>
-  <!-- [disabled]="contactForm.invalid" -->
+  <div class="input-container">
+    <span class="p-float-label">
+      <textarea
+        formControlName="message"
+        id="float-input"
+        [rows]="5"
+        [cols]="30"
+        pInputTextarea
+        [autoResize]="true"
+      ></textarea>
+      <label for="float-input" class="label-required">Message</label>
+    </span>
+    <small
+      *ngIf="message && message.touched && message.hasError('required')"
+      class="p-error block"
+      >The message area can not be empty</small
+    >
+  </div>
+
+  <!--  -->
   <div class="btn-container">
-    <p-button label="Send message" (click)="submit()"></p-button>
+    <p-button
+      [disabled]="contactForm.invalid"
+      (click)="submit()"
+      label="Send message"
+    ></p-button>
   </div>
 </form>

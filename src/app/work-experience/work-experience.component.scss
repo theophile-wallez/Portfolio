@@ -1,0 +1,47 @@
+@import "../../variables.scss";
+
+.work-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  .lateral-container {
+    box-sizing: border-box;
+    // width: min-content;
+    flex-shrink: 0;
+    .company {
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 0.6rem 1.5rem;
+      cursor: pointer;
+      margin-bottom: 0.4rem;
+      &.selected {
+        background-color: $color-dark;
+        border-radius: 0.3rem;
+        color: $color-light;
+      }
+    }
+  }
+
+  .content-container {
+    width: 100%;
+    height: 100%;
+
+    text-align: justify;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    .content {
+      font-size: 1.5rem;
+      box-sizing: border-box;
+      padding: 1rem;
+      padding-top: 0;
+      height: 100%;
+      overflow-y: scroll;
+    }
+
+    .content {
+      height: 100%;
+    }
+  }
+}

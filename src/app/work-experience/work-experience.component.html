@@ -1,0 +1,17 @@
+<div class="work-container">
+  <div class="lateral-container">
+    <div
+      class="company"
+      [ngClass]="{ selected: selectedWork === work }"
+      *ngFor="let work of workExperiences"
+      (click)="selectWork(work)"
+    >
+      {{ work.company }}
+    </div>
+  </div>
+  <div class="content-container">
+    <div class="content">
+      {{ selectedWork?.description }}
+    </div>
+  </div>
+</div>

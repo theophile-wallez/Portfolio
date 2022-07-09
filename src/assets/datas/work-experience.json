@@ -1,0 +1,17 @@
+[
+  {
+    "company": "Ostrum AM",
+    "description": "ALorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nostrum quos beatae, tenetur vel magni, ipsam perferendis numquam cumque quaerat ab eaque, velit optio rem doloremque quo. Tempore, error sapiente. Facere ratione numquam minima ipsa porro, perspiciatis reprehenderit animi odit fuga maxime vitae nemo, tempore quidem beatae laborum? ",
+    "duration": "6"
+  },
+  {
+    "company": "DC2Scale",
+    "description": "BLorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nostrum quos beatae, tenetur vel magni, ipsam perferendis numquam cumque quaerat ab eaque, velit optio rem doloremque quo. Tempore, error sapiente. Facere ratione numquam minima ipsa porro, perspiciatis reprehenderit animi odit fuga maxime vitae nemo, tempore quidem beatae laborum? ",
+    "duration": "2"
+  },
+  {
+    "company": "Natixis",
+    "description": "CLorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nostrum quos beatae, tenetur vel magni, ipsam perferendis numquam cumque quaerat ab eaque, velit optio rem doloremque quo. Tempore, error sapiente. Facere ratione numquam minima ipsa porro, perspiciatis reprehenderit animi odit fuga maxime vitae nemo, tempore quidem beatae laborum? ",
+    "duration": "2"
+  }
+]

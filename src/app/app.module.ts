@@ -15,6 +15,7 @@ import { ContactComponent } from './contact/contact.component';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
+import { WorkExperienceComponent } from './work-experience/work-experience.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ButtonModule } from 'primeng/button';
     SkillsComponent,
     ProjectsComponent,
     ContactComponent,
+    WorkExperienceComponent,
   ],
   imports: [
     BrowserModule,

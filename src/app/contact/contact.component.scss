@@ -7,13 +7,18 @@ form {
   }
 
   textarea,
-  .p-float-label {
+  .input-container {
     width: 100%;
   }
-  .p-float-label {
+  .input-container {
     margin-bottom: 1.8rem;
+    position: relative;
     input {
       width: 100%;
+    }
+    .p-error {
+      position: absolute;
+      bottom: -1.35rem;
     }
   }
   textarea:focus ~ label,
@@ -27,7 +32,7 @@ form {
   .first-lign {
     display: flex;
     justify-content: space-between;
-    .p-float-label:first-child {
+    .input-container:first-child {
       margin-right: 2rem;
     }
   }
@@ -37,4 +42,23 @@ form {
     display: flex;
     justify-content: flex-end;
   }
+}
+:host::ng-deep .label-required:after {
+  content: " *";
+  color: #e24c4c;
+}
+
+:host::ng-deep .ng-untouched:focus {
+  border-color: #6366f1 !important;
+}
+
+:host::ng-deep .ng-touched.ng-invalid {
+  border-color: #e24c4c;
+}
+.p-float-label > .ng-invalid.ng-untouched + label {
+  color: #495057;
+}
+
+.p-float-label > .ng-invalid.ng-touched + label {
+  color: #e24c4c;
 }
