@@ -29,5 +29,12 @@ export class WorkExperienceComponent implements OnInit {
 
   selectWork(selectedWork: WorkExperience) {
     this.selectedWork = selectedWork;
+    let element = document.getElementById('work-content');
+    if (element) {
+      element.scroll({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
   }
 }
