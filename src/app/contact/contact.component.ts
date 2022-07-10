@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import {
   FormGroup,
   FormBuilder,
@@ -12,14 +13,12 @@ import {
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  constructor(private formBuilder: FormBuilder) {}
-  contactForm!: FormGroup;
+  contactForm: FormGroup;
 
-  ngOnInit(): void {
-    this.initContactForm();
-  }
-
-  initContactForm() {
+  constructor(
+    private formBuilder: FormBuilder,
+    private messageService: MessageService
+  ) {
     this.contactForm = this.formBuilder.group({
       name: '',
       email: ['', [Validators.required, Validators.email]],
@@ -28,7 +27,31 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  submit() {}
+  ngOnInit(): void {}
+
+  submit(): void {
+    if (this.contactForm.invalid) {
+      this.errorToast();
+      return;
+    }
+    this.successToast();
+  }
+
+  successToast(): void {
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Message sent',
+      detail: 'Your message has been successfully sent!',
+    });
+  }
+
+  errorToast(): void {
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'There has been an error when submitting the contact form',
+    });
+  }
 
   get email(): AbstractControl | null {
     return this.contactForm.get('email');

@@ -62,3 +62,7 @@ form {
 .p-float-label > .ng-invalid.ng-touched + label {
   color: #e24c4c;
 }
+
+.p-toast-to {
+  z-index: 1000;
+}

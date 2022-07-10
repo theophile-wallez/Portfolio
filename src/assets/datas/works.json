@@ -2,28 +2,28 @@
   {
     "name": "Ostrum Asset Management",
     "imageName": "ostrum.svg",
-    "description": "An intership in the financial sector where I developed web apps using Angular and .NET to create trade orders",
+    "description": "An intership in the financial sector during which I developed web apps using Angular and .NET to create trade orders",
     "duration": "6",
     "link": "https://www.ostrum.com/fr"
   },
   {
     "name": "DC2Scale",
     "imageName": "dc2scale.svg",
-    "description": "An intership where I helped building a new datacenter in Vélizy-Villacoublay",
+    "description": "An intership during which I helped building a new datacenter in Vélizy-Villacoublay",
     "duration": "1",
     "link": "https://dc2scale.fr/"
   },
   {
     "name": "ooeo",
     "imageName": "ooeo.svg",
-    "description": "A mission in a degital agency where I built a website for a client using WordPress and Divi",
+    "description": "A mission in a degital agency during which I built a website for a client using WordPress and Divi",
     "duration": "1",
     "link": "https://ooeo.fr/"
   },
   {
     "name": "Natixis",
     "imageName": "natixis.webp",
-    "description": "Two fixed-term summer jobs where I got to discover the financial sector and helped digitize files",
+    "description": "Two fixed-term summer jobs during which I got to discover the financial sector and helped digitize files",
     "duration": "2",
     "link": "https://natixis.groupebpce.com/natixis/en/home-j_6.html"
   }

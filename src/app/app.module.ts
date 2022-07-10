@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
 import { WorkComponent } from './work/work.component';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -33,12 +35,14 @@ import { WorkComponent } from './work/work.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     InputTextModule,
     InputTextareaModule,
     ButtonModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
