@@ -16,6 +16,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
 import { WorkExperienceComponent } from './work-experience/work-experience.component';
+import { WorkComponent } from './work/work.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { WorkExperienceComponent } from './work-experience/work-experience.compo
     ProjectsComponent,
     ContactComponent,
     WorkExperienceComponent,
+    WorkComponent,
   ],
   imports: [
     BrowserModule,

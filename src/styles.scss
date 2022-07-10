@@ -17,7 +17,7 @@ body {
   background-color: #121316;
   transition: background-color $scroll-transition-time;
   ::selection {
-    background-color: rgb(204, 204, 204);
+    background-color: rgba(79, 79, 79, 0.379);
   }
   &.after-scroll {
     background-color: white;

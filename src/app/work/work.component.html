@@ -1,0 +1,24 @@
+<div class="work-container">
+  <div class="company" *ngFor="let work of works">
+    <img
+      [src]="imgFolderPath + work.imageName"
+      [alt]="work.name"
+      draggable="false"
+    />
+    <div class="company-infos-container">
+      <div class="title">
+        {{ work.name }}
+      </div>
+      <div class="duration">
+        {{ work.duration + " month" + (work.duration > 1 ? "s" : "") }}
+      </div>
+      <div class="description">
+        {{ work.description }}
+      </div>
+      <div class="visit-btn" (click)="openLink(work.link)">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        <div class="btn-text">Visit company's website</div>
+      </div>
+    </div>
+  </div>
+</div>
