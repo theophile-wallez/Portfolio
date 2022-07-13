@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import AOS from 'aos';
 
 export interface Project {
   title: string;
@@ -20,6 +21,7 @@ export class ProjectsComponent implements OnInit {
   projects: Project[] = [];
   ngOnInit(): void {
     this.getProjectData();
+    AOS.init();
   }
 
   async getProjectData() {

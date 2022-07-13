@@ -5,6 +5,9 @@
   width: 100%;
   margin-bottom: 2em;
   z-index: 2;
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .items-container {
@@ -46,7 +49,7 @@
     }
 
     .about-content {
-      // width: 50%;
+      margin: 0;
       font-size: 1.5em;
     }
 
@@ -115,3 +118,19 @@
     }
   }
 }
+#contact {
+  padding-block: 2rem;
+}
+// .bg-container {
+//   z-index: -1;
+//   position: absolute;
+//   width: 100vw;
+//   height: 100%;
+//   top: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   background-image: url("../../assets/img/decoration/blue\ copie.jpg");
+//   background-size: 100% 100%;
+//   background-repeat: no-repeat;
+//   background-position: right top;
+// }

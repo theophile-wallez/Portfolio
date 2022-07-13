@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   ngAfterViewInit(): void {
     this.elementsToChange.push(document.body);
     this.elementsToChange.push(document.getElementById('hero-content'));
+    this.elementsToChange.push(document.getElementById('bg-color'));
     this.elementsToChange.push(document.getElementById('header-menu'));
   }
   ngOnInit(): void {
