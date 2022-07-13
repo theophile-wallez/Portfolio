@@ -1,7 +1,6 @@
 import {
   Component,
   OnInit,
-  AfterViewInit,
   ElementRef,
   OnDestroy,
   ViewChild,
@@ -13,7 +12,7 @@ import * as THREE from 'three';
   templateUrl: './three-knot.component.html',
   styleUrls: ['./three-knot.component.scss'],
 })
-export class ThreeKnotComponent implements OnInit, AfterViewInit {
+export class ThreeKnotComponent implements OnInit, OnDestroy {
   constructor() {}
   @ViewChild('threeContainer') threeContainer!: ElementRef;
 
@@ -32,35 +31,39 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit {
   screenRatio: number = 16 / 9;
 
   ngOnInit(): void {
-    this.initTheeScene();
-    this.animate();
-  }
-
-  ngAfterViewInit() {
+    this.handleMeshTexture();
     window.addEventListener(
       'mousemove',
       this.onDocumentMouseMove.bind(this),
       false
     );
+  }
 
+  ngOnDestroy(): void {
+    window.removeEventListener(
+      'mousemove',
+      this.onDocumentMouseMove.bind(this),
+      false
+    );
+  }
+
+  initTheeScene() {
+    this.scene = new THREE.Scene();
+
+    this.camera = new THREE.PerspectiveCamera(40, 1, 1, 1000);
+    this.camera.position.set(0, 0, 120);
+
+    this.screenRatio = Math.round(window.innerWidth / window.innerHeight);
+
+    this.renderer = new THREE.WebGLRenderer({ alpha: true });
+    this.renderer.setClearColor(0x000000, 0);
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(
       this.threeContainer.nativeElement.offsetHeight,
       this.threeContainer.nativeElement.offsetHeight
     );
-    this.screenRatio = Math.round(window.innerWidth / window.innerHeight);
-
-    this.threeContainer.nativeElement.appendChild(this.renderer.domElement);
-  }
-
-  initTheeScene() {
-    this.camera = new THREE.PerspectiveCamera(40, 1, 1, 1000);
-    this.camera.position.set(0, 0, 120);
-
-    this.scene = new THREE.Scene();
-    this.renderer = new THREE.WebGLRenderer({ alpha: true });
-    this.renderer.setClearColor(0x000000, 0);
-    this.handleMeshTexture();
+    this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    this.renderer.outputEncoding = THREE.sRGBEncoding;
 
     let geometry: any = new THREE.TorusKnotGeometry(18, 8, 400, 140, 2, 3);
     let material: any = new THREE.MeshStandardMaterial({
@@ -72,23 +75,18 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit {
     });
 
     this.torusMesh = new THREE.Mesh(geometry, material);
-    this.scene.add(this.torusMesh);
 
-    //! LIGHTING
-
-    let ambientLight: THREE.AmbientLight = new THREE.AmbientLight(0xffffff);
-    ambientLight.intensity = 0.7;
-
-    let directionalLight: THREE.DirectionalLight = new THREE.DirectionalLight(
-      0xffffff
-    );
+    let ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    let directionalLight = new THREE.DirectionalLight();
+    directionalLight.color = new THREE.Color(0xffffff);
     directionalLight.intensity = 0.7;
     directionalLight.position.set(90, 0, 10);
 
     this.scene.add(directionalLight, ambientLight);
+    this.scene.add(this.torusMesh);
 
-    this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    this.renderer.outputEncoding = THREE.sRGBEncoding;
+    this.threeContainer.nativeElement.appendChild(this.renderer.domElement);
+    this.animate();
   }
 
   animate() {
@@ -109,20 +107,23 @@ export class ThreeKnotComponent implements OnInit, AfterViewInit {
 
   handleMeshTexture() {
     this.meshTexture = new THREE.TextureLoader().load(
-      '../../assets/textures/texture.webp'
+      '../../assets/textures/texture.webp',
+      () => {
+        this.meshTexture.encoding = THREE.sRGBEncoding;
+        this.meshTexture.wrapS = this.meshTexture.wrapT = THREE.RepeatWrapping;
+        this.meshTexture.offset.set(0, 0);
+        this.meshTexture.repeat.set(2, 2);
+
+        this.normalTexture = new THREE.TextureLoader().load(
+          '../../assets/textures/normal.webp',
+          () => {
+            this.normalTexture.wrapS = this.normalTexture.wrapT =
+              THREE.MirroredRepeatWrapping;
+            this.initTheeScene();
+          }
+        );
+      }
     );
-
-    this.meshTexture.encoding = THREE.sRGBEncoding;
-    this.meshTexture.wrapS = this.meshTexture.wrapT = THREE.RepeatWrapping;
-    this.meshTexture.offset.set(0, 0);
-    this.meshTexture.repeat.set(2, 2);
-
-    this.normalTexture = new THREE.TextureLoader().load(
-      '../../assets/textures/normal.webp'
-    );
-
-    this.normalTexture.wrapS = this.normalTexture.wrapT =
-      THREE.MirroredRepeatWrapping;
   }
 
   offSetMeshTexture() {

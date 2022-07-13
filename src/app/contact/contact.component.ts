@@ -60,4 +60,8 @@ export class ContactComponent implements OnInit {
   get message(): AbstractControl | null {
     return this.contactForm.get('message');
   }
+
+  // Links
+
+  downloadResume(): void {}
 }

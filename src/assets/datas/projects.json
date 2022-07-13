@@ -5,7 +5,7 @@
     "techs": ["Angular", "Java Spring", "Firebase", "Swagger"],
     "imgSrc": "/../../assets/img/projects/rbnb.webp",
     "sourceCodeLink": "rBNB",
-    "projectLink": "https://rbnb-project.herokuapp.com/"
+    "projectLink": "https://rbnb.up.railway.app/"
   },
   {
     "title": "Psycaptr",

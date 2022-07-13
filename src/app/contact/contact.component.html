@@ -1,68 +1,119 @@
-<form [formGroup]="contactForm">
-  <div class="first-lign">
-    <div class="input-container">
-      <span class="p-float-label">
-        <input formControlName="name" id="float-input" type="text" pInputText />
-        <label for="float-input">Name</label>
-      </span>
+<div class="contact-content">
+  <form [formGroup]="contactForm">
+    <div class="first-lign">
+      <div class="input-container">
+        <span class="p-float-label">
+          <input
+            formControlName="name"
+            id="float-input"
+            type="text"
+            pInputText
+          />
+          <label for="float-input">Name</label>
+        </span>
+      </div>
+      <div class="input-container">
+        <span class="p-float-label">
+          <input
+            formControlName="email"
+            id="float-input"
+            type="text"
+            pInputText
+            [required]="true"
+            reflect-required="false"
+          />
+          <label for="float-input" class="label-required">Email</label>
+        </span>
+        <small
+          *ngIf="email && email.touched && email.hasError('required')"
+          class="p-error block"
+          >The email field cannot be empty</small
+        >
+        <small
+          *ngIf="email && email.touched && email.hasError('email')"
+          class="p-error block"
+          >The email provided is not valid
+        </small>
+      </div>
     </div>
     <div class="input-container">
       <span class="p-float-label">
         <input
-          formControlName="email"
+          formControlName="subject"
           id="float-input"
           type="text"
           pInputText
-          [required]="true"
-          reflect-required="false"
         />
-        <label for="float-input" class="label-required">Email</label>
+        <label for="float-input">Subject</label>
+      </span>
+    </div>
+    <div class="input-container">
+      <span class="p-float-label">
+        <textarea
+          formControlName="message"
+          id="float-input"
+          [rows]="5"
+          [cols]="30"
+          pInputTextarea
+          [autoResize]="true"
+        ></textarea>
+        <label for="float-input" class="label-required">Message</label>
       </span>
       <small
-        *ngIf="email && email.touched && email.hasError('required')"
+        *ngIf="message && message.touched && message.hasError('required')"
         class="p-error block"
-        >The email field can not be empty</small
+        >The message area cannot be empty</small
       >
-      <small
-        *ngIf="email && email.touched && email.hasError('email')"
-        class="p-error block"
-        >The email provided is not a correct email
-      </small>
+    </div>
+
+    <!--  -->
+    <div class="btn-container">
+      <!-- [disabled]="contactForm.invalid" -->
+      <div
+        class="submit-btn hvr-buzz-out"
+        (click)="submit()"
+        [ngClass]="{ disabled: contactForm.invalid }"
+      >
+        Send message
+      </div>
+      <!-- <p-button (click)="submit()" label="Send message"></p-button> -->
+    </div>
+  </form>
+  <div class="contact-infos-container">
+    <a
+      class="contact-info"
+      href="https://www.linkedin.com/in/theophile-wallez/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fa-brands fa-linkedin"></i>
+      <div class="link-text">LinkedIn profil</div>
+    </a>
+    <a
+      class="contact-info"
+      href="https://github.com/theophile-wallez"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fa-brands fa-github"></i>
+      <div class="link-text">GitHub profil</div>
+    </a>
+    <a
+      class="contact-info"
+      href="https://stackoverflow.com/users/15813444/th%c3%a9ophile-wallez"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fa-brands fa-stack-overflow"></i>
+      <div class="link-text">Stack Overflow profil</div>
+    </a>
+    <a class="contact-info" href="mailto: theophile.wall@gmail.com">
+      <i class="fa-solid fa-envelope"></i>
+      <div class="link-text">theophile.wall@gmail.com</div>
+    </a>
+    <div class="cv-btn" (click)="downloadResume()">
+      <i class="fa-solid fa-file-arrow-down"></i>
+      <div class="text">Download my resume</div>
     </div>
   </div>
-  <div class="input-container">
-    <span class="p-float-label">
-      <input
-        formControlName="subject"
-        id="float-input"
-        type="text"
-        pInputText
-      />
-      <label for="float-input">Subject</label>
-    </span>
-  </div>
-  <div class="input-container">
-    <span class="p-float-label">
-      <textarea
-        formControlName="message"
-        id="float-input"
-        [rows]="5"
-        [cols]="30"
-        pInputTextarea
-        [autoResize]="true"
-      ></textarea>
-      <label for="float-input" class="label-required">Message</label>
-    </span>
-    <small
-      *ngIf="message && message.touched && message.hasError('required')"
-      class="p-error block"
-      >The message area can not be empty</small
-    >
-  </div>
-
-  <!--  -->
-  <div class="btn-container">
-    <!-- [disabled]="contactForm.invalid" -->
-    <p-button (click)="submit()" label="Send message"></p-button>
-  </div>
-</form>
+</div>

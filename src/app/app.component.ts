@@ -13,9 +13,9 @@ export class AppComponent implements OnInit {
 
   elementsToChange: any[] = [];
   ngAfterViewInit(): void {
+    this.elementsToChange.push(document.body);
     this.elementsToChange.push(document.getElementById('hero-content'));
     this.elementsToChange.push(document.getElementById('header-menu'));
-    this.elementsToChange.push(document.body);
   }
   ngOnInit(): void {
     window.addEventListener('scroll', this.onWindowScroll.bind(this));

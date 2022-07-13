@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 form {
   width: 100%;
   font-size: 1.1em;
@@ -41,6 +43,19 @@ form {
     user-select: none;
     display: flex;
     justify-content: flex-end;
+    .submit-btn {
+      background-color: $color-dark;
+      padding: 0.4rem 1rem;
+      border-radius: 0.3rem;
+      color: $color-light;
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+
+      &.disabled {
+        cursor: default;
+      }
+    }
   }
 }
 :host::ng-deep .label-required:after {
@@ -63,6 +78,166 @@ form {
   color: #e24c4c;
 }
 
-.p-toast-to {
-  z-index: 1000;
+/* Buzz Out */
+@-webkit-keyframes hvr-buzz-out {
+  10% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  20% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  30% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  40% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  50% {
+    -webkit-transform: translateX(2px) rotate(1deg);
+    transform: translateX(2px) rotate(1deg);
+  }
+  60% {
+    -webkit-transform: translateX(-2px) rotate(-1deg);
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  70% {
+    -webkit-transform: translateX(2px) rotate(1deg);
+    transform: translateX(2px) rotate(1deg);
+  }
+  80% {
+    -webkit-transform: translateX(-2px) rotate(-1deg);
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  90% {
+    -webkit-transform: translateX(1px) rotate(0);
+    transform: translateX(1px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateX(-1px) rotate(0);
+    transform: translateX(-1px) rotate(0);
+  }
+}
+@keyframes hvr-buzz-out {
+  10% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  20% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  30% {
+    -webkit-transform: translateX(3px) rotate(2deg);
+    transform: translateX(3px) rotate(2deg);
+  }
+  40% {
+    -webkit-transform: translateX(-3px) rotate(-2deg);
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  50% {
+    -webkit-transform: translateX(2px) rotate(1deg);
+    transform: translateX(2px) rotate(1deg);
+  }
+  60% {
+    -webkit-transform: translateX(-2px) rotate(-1deg);
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  70% {
+    -webkit-transform: translateX(2px) rotate(1deg);
+    transform: translateX(2px) rotate(1deg);
+  }
+  80% {
+    -webkit-transform: translateX(-2px) rotate(-1deg);
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  90% {
+    -webkit-transform: translateX(1px) rotate(0);
+    transform: translateX(1px) rotate(0);
+  }
+  100% {
+    -webkit-transform: translateX(-1px) rotate(0);
+    transform: translateX(-1px) rotate(0);
+  }
+}
+.hvr-buzz-out {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.disabled.hvr-buzz-out:hover {
+  -webkit-animation-name: hvr-buzz-out;
+  animation-name: hvr-buzz-out;
+  -webkit-animation-duration: 0.75s;
+  animation-duration: 0.75s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+
+  form {
+    min-width: min-content;
+    width: 60%;
+    flex-shrink: 0;
+  }
+}
+.contact-infos-container {
+  width: 30%;
+  .contact-info {
+    margin-left: 0.8rem;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.3rem;
+    text-decoration: none;
+    color: $color-dark;
+    cursor: pointer;
+    i {
+      font-size: 1.5rem;
+      user-select: none;
+    }
+    .link-text {
+      font-weight: 500;
+      font-size: 1.4rem;
+      margin-left: 1.1rem;
+    }
+    &:hover .link-text {
+      text-decoration: underline;
+    }
+  }
+  .cv-btn {
+    padding: 0.6rem 1rem;
+    background-color: $color-dark;
+    color: $color-light;
+    display: flex;
+    width: fit-content;
+    border-radius: 0.3rem;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    i {
+      font-size: 1.3rem;
+    }
+    .text {
+      font-size: 1.2rem;
+      margin-left: 1rem;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
 }
