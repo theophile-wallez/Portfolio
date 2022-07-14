@@ -1,5 +1,5 @@
 <div class="skills-container">
-  <div *ngFor="let skill of skills" class="skill">
+  <div *ngFor="let skill of skills; let index = index" class="skill">
     <div class="skill-logo">
       <img
         [src]="skillsIconsFolderPath + skill.imgSource"
