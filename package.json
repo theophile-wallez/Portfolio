@@ -11,8 +11,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-three/core": "^5.0.0",
-    "@angular-three/schematics": "^5.5.0",
     "@angular/animations": "~13.2.0",
     "@angular/common": "~13.2.0",
     "@angular/compiler": "~13.2.0",
@@ -23,13 +21,11 @@
     "@angular/router": "~13.2.0",
     "aos": "^2.3.4",
     "http-server-spa": "^1.3.0",
-    "lil-gui": "^0.16.1",
     "primeicons": "^5.0.0",
     "primeng": "^13.4.1",
     "rxjs": "~7.5.0",
     "TagCloud": "^2.2.0",
     "three": "0.140.2",
-    "tree": "^0.1.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
