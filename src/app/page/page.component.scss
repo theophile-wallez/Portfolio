@@ -41,9 +41,11 @@
 
   .about-container {
     width: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: stretch;
+    // grid-auto-rows: unset;
+
     & > * {
       width: 45%;
     }
@@ -51,10 +53,14 @@
     .about-content {
       margin: 0;
       font-size: 1.5em;
+      grid-area: a;
+      justify-self: start;
     }
 
-    work-experience {
-      height: 20rem;
+    skills-browser-mock {
+      height: min-content;
+      grid-area: b;
+      justify-self: end;
     }
   }
   .skills-container {
@@ -63,29 +69,6 @@
     justify-content: center;
     align-items: center;
   }
-}
-
-.hover-underline-animation {
-  display: inline-block;
-  position: relative;
-}
-
-.hover-underline-animation:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 5px;
-  bottom: 0;
-  left: 0;
-  background-color: $color-dark;
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
-}
-
-.hover-underline-animation:hover:after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
 }
 
 .background-wrapper {
@@ -118,19 +101,7 @@
     }
   }
 }
+
 #contact {
-  padding-block: 2rem;
+  margin-bottom: 2rem;
 }
-// .bg-container {
-//   z-index: -1;
-//   position: absolute;
-//   width: 100vw;
-//   height: 100%;
-//   top: 0;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   background-image: url("../../assets/img/decoration/blue\ copie.jpg");
-//   background-size: 100% 100%;
-//   background-repeat: no-repeat;
-//   background-position: right top;
-// }

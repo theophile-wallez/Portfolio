@@ -198,7 +198,6 @@ form {
 .contact-infos-container {
   width: 30%;
   .contact-info {
-    margin-left: 0.8rem;
     width: fit-content;
     display: flex;
     align-items: center;
@@ -207,8 +206,12 @@ form {
     color: $color-dark;
     cursor: pointer;
     i {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-size: 1.5rem;
       user-select: none;
+      width: 1.5rem;
     }
     .link-text {
       font-weight: 500;

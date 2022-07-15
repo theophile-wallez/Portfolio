@@ -6,6 +6,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  &:last-child {
+    padding-bottom: 0;
+  }
   .project-content {
     width: 40%;
     .project-title {
@@ -21,6 +24,7 @@
       display: flex;
       flex-wrap: wrap;
       margin-bottom: 1rem;
+
       .tech-item {
         user-select: none;
         font-size: 0.9em;

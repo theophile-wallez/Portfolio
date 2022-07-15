@@ -13,13 +13,20 @@
     position: relative;
     padding-block: $company-padding;
     height: calc(3rem + 2 * $company-padding);
-    margin: 1rem 2.1rem;
+    margin: 1rem 2.9rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
     img {
       height: 100%;
     }
+    z-index: 100;
 
     .company-infos-container {
       $padding: 1rem;

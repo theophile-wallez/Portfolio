@@ -9,7 +9,7 @@ body {
   margin: 0 auto;
   max-width: 1144px;
   padding-inline: 2rem;
-  font-family: $font;
+  font-family: $font, Helvetica, Arial, sans-serif;
   position: relative;
   font-size: 16px;
   color: $color-dark;
@@ -39,7 +39,7 @@ h2 {
   color: #181a1d;
   font-size: 4em;
   z-index: 20;
-  margin-block: 1rem;
+  margin-block: 2rem;
 }
 
 :root {
