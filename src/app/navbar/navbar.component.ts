@@ -1,3 +1,4 @@
+import { HelperService } from './../helper.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,21 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  constructor(private helperService: HelperService) {}
 
   ngOnInit(): void {}
 
-  scrollTo(elementName?: string): void {
-    let yScroll: number = 0;
-    if (elementName) {
-      let element: HTMLElement | null = document.getElementById(elementName);
-      if (!element) return;
-      yScroll = element.getBoundingClientRect().top + window.scrollY - 70;
-    }
-
-    window.scroll({
-      top: yScroll,
-      behavior: 'smooth',
-    });
+  scrollTo(elementName?: string) {
+    this.helperService.scrollTo(elementName);
   }
 }
