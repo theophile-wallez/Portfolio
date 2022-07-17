@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
 @Component({
@@ -7,8 +7,9 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./app.component.scss'],
   providers: [MessageService],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'portfolio';
+  isPageLoading: boolean = true;
   constructor() {}
 
   elementsToChange: any[] = [];
@@ -17,6 +18,9 @@ export class AppComponent implements OnInit {
     this.elementsToChange.push(document.getElementById('hero-content'));
     this.elementsToChange.push(document.getElementById('bg-color'));
     this.elementsToChange.push(document.getElementById('header-menu'));
+    window.scrollTo({ top: 0 });
+
+    this.isPageLoading = false;
   }
   ngOnInit(): void {
     window.addEventListener('scroll', this.onWindowScroll.bind(this));

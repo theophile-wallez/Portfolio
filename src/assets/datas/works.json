@@ -1,8 +1,8 @@
 [
   {
-    "name": "Ostrum Asset Management",
+    "name": "Ostrum AM",
     "imageName": "ostrum.svg",
-    "description": "An intership in the financial sector during which I developed web apps using Angular and .NET allowing the creation of orders on financial markets ",
+    "description": "An intership during which I developed web apps using Angular and .NET allowing the creation of orders on financial markets ",
     "duration": "6",
     "link": "https://www.ostrum.com/en"
   },

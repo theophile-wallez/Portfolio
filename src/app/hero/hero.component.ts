@@ -1,3 +1,4 @@
+import { HelperService } from './../helper.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero.component.scss'],
 })
 export class HeroComponent implements OnInit {
-  constructor() {}
+  constructor(private helperService: HelperService) {}
 
   ngOnInit(): void {}
+  scrollToAboutSection() {
+    this.helperService.scrollTo('about');
+  }
 }
