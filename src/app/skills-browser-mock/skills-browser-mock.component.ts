@@ -27,7 +27,7 @@ export class SkillsBrowserMockComponent implements OnInit {
     this.techSides.set('backend', [
       { name: 'Spring', logoName: 'spring.svg' },
       { name: 'NodeJS', logoName: 'nodejs.svg' },
-      { name: 'C# (.NET)', logoName: 'cs.svg' },
+      { name: 'C# (.NET)', logoName: 'csharp.svg' },
       { name: 'SQL', logoName: 'mysql.svg' },
       { name: 'Firebase', logoName: 'firebase.svg' },
     ]);
@@ -40,7 +40,6 @@ export class SkillsBrowserMockComponent implements OnInit {
       { name: 'Github', logoName: 'github.svg' },
       { name: 'SVN', logoName: 'svn.svg' },
     ]);
-    console.log('this.techSides: ', this.techSides);
   }
 
   changeTab(tabName: string): void {

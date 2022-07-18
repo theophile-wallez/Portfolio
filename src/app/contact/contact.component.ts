@@ -49,7 +49,7 @@ export class ContactComponent implements OnInit {
     this.messageService.add({
       severity: 'error',
       summary: 'Error',
-      detail: 'There has been an error when submitting the contact form',
+      detail: 'There was an error when submitting the contact form',
     });
   }
 
@@ -60,8 +60,4 @@ export class ContactComponent implements OnInit {
   get message(): AbstractControl | null {
     return this.contactForm.get('message');
   }
-
-  // Links
-
-  downloadResume(): void {}
 }

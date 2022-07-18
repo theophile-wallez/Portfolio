@@ -9,14 +9,12 @@ import { ThreeKnotComponent } from './three-knot/three-knot.component';
 import { HeroComponent } from './hero/hero.component';
 import { PageComponent } from './page/page.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
-import { WorkExperienceComponent } from './work-experience/work-experience.component';
 import { WorkComponent } from './work/work.component';
 import { ToastModule } from 'primeng/toast';
 import { SkillsBrowserMockComponent } from './skills-browser-mock/skills-browser-mock.component';
@@ -28,10 +26,8 @@ import { SkillsBrowserMockComponent } from './skills-browser-mock/skills-browser
     HeroComponent,
     PageComponent,
     NavbarComponent,
-    SkillsComponent,
     ProjectsComponent,
     ContactComponent,
-    WorkExperienceComponent,
     WorkComponent,
     SkillsBrowserMockComponent,
   ],
