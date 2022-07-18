@@ -37,13 +37,17 @@ header {
       user-select: none;
       width: $logo-size;
       height: $logo-size;
-      border-radius: 1.1rem;
+      border-radius: 50%;
       background-color: #248aff;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       transition: transform 0.4s;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
       img {
         user-select: none;
         width: 500%;
