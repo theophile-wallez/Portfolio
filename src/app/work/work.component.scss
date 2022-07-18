@@ -4,9 +4,11 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin-block: 4rem;
+  margin-top: 1rem;
+  margin-bottom: 7rem;
   align-items: center;
   user-select: none;
+
   @media (max-width: 599px) {
     flex-direction: column;
   }
@@ -110,4 +112,9 @@
       transform: scale(1);
     }
   }
+}
+
+.work-title {
+  margin: 0;
+  margin-top: 4rem;
 }

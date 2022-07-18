@@ -15,6 +15,11 @@ form {
   .input-container {
     width: 100%;
   }
+  @media (max-width: 599px) {
+    .input-container {
+      margin-bottom: 1rem;
+    }
+  }
   .input-container {
     margin-bottom: 1.8rem;
     position: relative;
@@ -39,6 +44,9 @@ form {
     justify-content: space-between;
     .input-container:first-child {
       margin-right: 2rem;
+    }
+    @media (max-width: 599px) {
+      display: block;
     }
   }
 
@@ -199,19 +207,25 @@ form {
     margin-bottom: 1rem;
     flex-shrink: 0;
   }
-  @media (max-width: 599px) {
+  @media (max-width: 950px) {
     justify-content: center;
     align-items: center;
+
     form {
       width: 100%;
     }
     .contact-infos-container {
       width: min-content;
+      margin-left: 0;
+      margin-top: 2rem;
     }
   }
 }
 .contact-infos-container {
   width: 30%;
+
+  min-width: fit-content;
+  margin-left: 3rem;
   .contact-info {
     white-space: nowrap;
     width: fit-content;

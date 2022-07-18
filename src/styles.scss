@@ -54,12 +54,18 @@ h2 {
 
 h1,
 h2,
-.bold {
+h3 {
   @media not all and (min-resolution: 0.001dpcm) {
     @supports (-webkit-appearance: none) and (stroke-color: transparent) {
       font-family: $font-regular, Helvetica, Arial, sans-serif;
     }
   }
+}
+h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 2.4em;
+  margin-bottom: 1rem;
 }
 
 :root {
