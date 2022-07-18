@@ -2,6 +2,9 @@
 
 form {
   width: 100%;
+  @media (max-width: 599px) {
+    min-width: 80vw;
+  }
   font-size: 1.1em;
 
   label {
@@ -171,15 +174,17 @@ form {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 }
 
-.disabled.hvr-buzz-out:hover {
-  -webkit-animation-name: hvr-buzz-out;
-  animation-name: hvr-buzz-out;
-  -webkit-animation-duration: 0.75s;
-  animation-duration: 0.75s;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
+.hvr-buzz-out {
+  &.animate {
+    -webkit-animation-name: hvr-buzz-out;
+    animation-name: hvr-buzz-out;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+  }
 }
 
 .contact-content {
@@ -190,15 +195,27 @@ form {
   position: relative;
 
   form {
-    min-width: min-content;
     width: 60%;
+    margin-bottom: 1rem;
     flex-shrink: 0;
+  }
+  @media (max-width: 599px) {
+    justify-content: center;
+    align-items: center;
+    form {
+      width: 100%;
+    }
+    .contact-infos-container {
+      width: min-content;
+    }
   }
 }
 .contact-infos-container {
   width: 30%;
   .contact-info {
+    white-space: nowrap;
     width: fit-content;
+    min-width: min-content;
     display: flex;
     align-items: center;
     margin-bottom: 1.3rem;

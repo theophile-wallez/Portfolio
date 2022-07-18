@@ -31,7 +31,13 @@ export class ContactComponent implements OnInit {
 
   submit(): void {
     if (this.contactForm.invalid) {
-      this.errorToast();
+      let button = document.getElementById('submit-btn');
+      if (!button?.classList.contains('animate')) {
+        button?.classList.add('animate');
+        setTimeout(() => {
+          button?.classList.remove('animate');
+        }, 750);
+      }
       return;
     }
     this.successToast();

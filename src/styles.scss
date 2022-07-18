@@ -40,6 +40,10 @@ h2 {
   font-size: 4em;
   z-index: 20;
   margin-block: 2rem;
+  @media (max-width: 599px) {
+    font-size: 3em;
+    margin-block: 1rem;
+  }
 }
 
 :root {

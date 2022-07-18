@@ -68,15 +68,14 @@
 
     <!--  -->
     <div class="btn-container">
-      <!-- [disabled]="contactForm.invalid" -->
       <div
         class="submit-btn hvr-buzz-out"
+        id="submit-btn"
         (click)="submit()"
         [ngClass]="{ disabled: contactForm.invalid }"
       >
         Send message
       </div>
-      <!-- <p-button (click)="submit()" label="Send message"></p-button> -->
     </div>
   </form>
   <div class="contact-infos-container">

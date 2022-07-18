@@ -10,6 +10,11 @@
   align-items: center;
   z-index: 2;
   background-color: none;
+  @media (max-width: 599px) {
+    width: 20rem;
+    height: 20rem;
+    right: -2rem;
+  }
   canvas {
     background: red;
   }

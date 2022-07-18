@@ -7,6 +7,9 @@
   margin-block: 4rem;
   align-items: center;
   user-select: none;
+  @media (max-width: 599px) {
+    flex-direction: column;
+  }
 
   .company {
     $company-padding: 1.5rem;
@@ -14,6 +17,17 @@
     padding-block: $company-padding;
     height: calc(3rem + 2 * $company-padding);
     margin: 1rem 2.9rem;
+    @media (max-width: 599px) {
+      margin: 0;
+      // height: calc(2.5rem + 2 * $company-padding);
+      height: auto;
+      width: 150px;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
     display: flex;
     justify-content: center;
     align-items: center;

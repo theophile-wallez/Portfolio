@@ -1,6 +1,7 @@
 .window-container {
   width: 100%;
   min-width: min-content;
+
   height: 100%;
   box-shadow: hsla(210, 8%, 62%, 0.2) 0px 8px 24px;
   border-radius: 0.5rem;
@@ -15,12 +16,6 @@
     height: $tab-container-height;
     padding-top: 0.4rem;
     background-color: #f1f5f9;
-    // background: linear-gradient(
-    //   90deg,
-    //   rgba(216, 243, 255, 1),
-    //   rgba(255, 143, 167, 0.42),
-    //   rgba(1, 16, 240, 0.28)
-    // );
 
     border-bottom: $border;
 
@@ -45,10 +40,12 @@
         height: 100%;
         padding-inline: 1.5rem;
         font-size: 1.1rem;
+        @media (max-width: 599px) {
+          font-size: 1rem;
+          padding-inline: 0.5rem;
+        }
         font-weight: 600;
         color: hsl(0, 0%, 40%);
-
-        // transition: background-color 0.2s;
 
         $border-radius: 0.4rem;
         border-top-left-radius: $border-radius;
@@ -100,6 +97,11 @@
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 12px;
     grid-row-gap: 12px;
+    @media (max-width: 599px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 0;
+      grid-row-gap: 0;
+    }
     .tech-item {
       display: flex;
       align-items: center;

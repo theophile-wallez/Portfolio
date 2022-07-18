@@ -13,6 +13,9 @@ header {
   #header-menu {
     font-size: 1.3em;
     font-weight: 600;
+    @media (max-width: 599px) {
+      font-size: 1em;
+    }
     user-select: none;
     position: relative;
     height: 100%;

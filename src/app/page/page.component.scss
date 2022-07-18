@@ -55,6 +55,10 @@
       font-size: 1.5rem;
       grid-area: a;
       justify-self: start;
+      margin-bottom: 2rem;
+      @media (max-width: 599px) {
+        width: 100%;
+      }
 
       img {
         height: 1.5rem;
@@ -66,15 +70,18 @@
     skills-browser-mock {
       flex-shrink: 0;
       height: min-content;
-      grid-area: b;
-      justify-self: end;
+      @media (max-width: 599px) {
+        width: 100%;
+      }
     }
   }
   .skills-container {
     width: 35%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    @media (max-width: 599px) {
+      width: 100%;
+      flex-shrink: 0;
+    }
   }
 }
 
