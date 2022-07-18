@@ -7,14 +7,18 @@ header {
   max-width: 1080px;
   height: $header-height;
   top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
   #header-menu {
+    position: relative;
     font-size: 1.3em;
     font-weight: 600;
     @media (max-width: 599px) {
       font-size: 1em;
+      width: 95%;
     }
     user-select: none;
     position: relative;
@@ -65,7 +69,10 @@ header {
       height: 3em;
       display: flex;
       align-items: center;
-
+      @media (max-width: 599px) {
+        position: absolute;
+        visibility: hidden;
+      }
       .link {
         white-space: nowrap;
         cursor: pointer;
@@ -80,6 +87,9 @@ header {
         color: hsla(0, 0%, 100%, 0.5);
         &:hover {
           color: hsla(0, 0%, 100%, 1);
+        }
+        @media (max-width: 599px) {
+          padding: 0 0.3rem;
         }
       }
     }

@@ -78,6 +78,9 @@ $transition-time: 0.4s;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: $max-width-599) {
+    bottom: 8rem;
+  }
 }
 .scroll-down {
   cursor: pointer;

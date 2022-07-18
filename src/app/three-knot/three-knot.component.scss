@@ -11,9 +11,10 @@
   z-index: 2;
   background-color: none;
   @media (max-width: 599px) {
-    width: 20rem;
-    height: 20rem;
+    width: 25rem;
+    height: 25rem;
     right: -2rem;
+    top: -10rem;
   }
   canvas {
     background: red;
