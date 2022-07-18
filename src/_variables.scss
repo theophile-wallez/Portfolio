@@ -1,10 +1,20 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css);
 @font-face {
   font-family: WalsheimProLight;
-  src: url("assets/fonts/GTWalsheimProLight.woff2");
+  src: url("assets/fonts/GTWalsheimPro-Light.woff2");
+}
+@font-face {
+  font-family: WalsheimProRegular;
+  src: url("assets/fonts/GTWalsheimPro-Regular.woff2");
+}
+@font-face {
+  font-family: WalsheimProBold;
+  src: url("assets/fonts/GTWalsheimPro-Bold.woff2");
 }
 
-$font: WalsheimProLight;
+$font-light: WalsheimProLight;
+$font-regular: WalsheimProRegular;
+$font-bold: WalsheimProBold;
 $color-dark: #121316;
 $color-light: white;
 $scroll-transition-time: 0.4s;

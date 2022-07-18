@@ -3,13 +3,18 @@
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  // -webkit-font-smoothing: subpixel-antialiased !important;
+  // text-rendering: optimizeLegibility !important;
+  text-rendering: optimizeLegibility;
+
   // color: $color-dark;
 }
 body {
   margin: 0 auto;
   max-width: 1144px;
   padding-inline: 2rem;
-  font-family: $font, Helvetica, Arial, sans-serif;
+  font-family: $font-light, Helvetica, Arial, sans-serif;
+
   position: relative;
   font-size: 16px;
   color: $color-dark;
@@ -38,11 +43,22 @@ body.after-scroll .center {
 h2 {
   color: #181a1d;
   font-size: 3.5rem;
+  font-family: $font-light;
   z-index: 20;
   margin-block: 2rem;
   @media (max-width: 599px) {
     font-size: 3rem;
     margin-block: 1rem;
+  }
+}
+
+h1,
+h2,
+.bold {
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+      font-family: $font-regular, Helvetica, Arial, sans-serif;
+    }
   }
 }
 
