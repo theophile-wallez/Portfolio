@@ -18,6 +18,7 @@ import { ButtonModule } from 'primeng/button';
 import { WorkComponent } from './work/work.component';
 import { ToastModule } from 'primeng/toast';
 import { SkillsBrowserMockComponent } from './skills-browser-mock/skills-browser-mock.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SkillsBrowserMockComponent } from './skills-browser-mock/skills-browser
     ContactComponent,
     WorkComponent,
     SkillsBrowserMockComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

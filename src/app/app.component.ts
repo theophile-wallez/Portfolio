@@ -1,3 +1,4 @@
+import { HelperService } from './helper.service';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
@@ -10,7 +11,7 @@ import { MessageService } from 'primeng/api';
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'portfolio';
   isPageLoading: boolean = true;
-  constructor() {}
+  constructor(private helperService: HelperService) {}
 
   elementsToChange: any[] = [];
   ngAfterViewInit(): void {
@@ -18,11 +19,17 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.elementsToChange.push(document.getElementById('hero-content'));
     this.elementsToChange.push(document.getElementById('bg-color'));
     this.elementsToChange.push(document.getElementById('header-menu'));
+
+    // Handles app loading
     window.scrollTo({ top: 0 });
 
-    this.isPageLoading = false;
+    document.getElementById('loader')?.classList.add('disappear');
+    setTimeout(() => {
+      this.isPageLoading = false;
+    }, 500);
   }
   ngOnInit(): void {
+    document.getElementById('body')?.classList.add('no-scroll');
     window.addEventListener('scroll', this.onWindowScroll.bind(this));
   }
 
