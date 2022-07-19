@@ -11,8 +11,7 @@ import { MessageService } from 'primeng/api';
 export class AppComponent implements OnInit, AfterViewInit {
   title = 'portfolio';
   isPageLoading: boolean = true;
-  constructor(private helperService: HelperService) {}
-
+  constructor() {}
   elementsToChange: any[] = [];
   ngAfterViewInit(): void {
     this.elementsToChange.push(document.body);
@@ -22,16 +21,21 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     // Handles app loading
     window.scrollTo({ top: 0 });
-
-    document.getElementById('loader')?.classList.add('disappear');
     setTimeout(() => {
-      this.isPageLoading = false;
-      document.getElementById('body')?.classList.remove('no-scroll');
-    }, 500);
+      document.getElementById('loader')?.classList.add('disappear');
+      window.removeEventListener('scroll', this.noscroll);
+      setTimeout(() => {
+        this.isPageLoading = false;
+      }, 500);
+    }, 1500);
   }
   ngOnInit(): void {
-    document.getElementById('body')?.classList.add('no-scroll');
+    window.addEventListener('scroll', this.noscroll);
     window.addEventListener('scroll', this.onWindowScroll.bind(this));
+  }
+
+  noscroll() {
+    window.scrollTo(0, 0);
   }
 
   onWindowScroll() {
