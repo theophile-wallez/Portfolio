@@ -16,7 +16,7 @@
     right: -2rem;
     top: -10rem;
   }
-  canvas {
-    background: red;
-  }
+}
+canvas {
+  image-rendering: optimizeQuality;
 }

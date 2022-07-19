@@ -37,6 +37,7 @@ export class ThreeKnotComponent implements OnInit, OnDestroy {
       this.onDocumentMouseMove.bind(this),
       false
     );
+    window.addEventListener('resize', this.onWindowResize.bind(this));
   }
 
   ngOnDestroy(): void {
@@ -45,6 +46,7 @@ export class ThreeKnotComponent implements OnInit, OnDestroy {
       this.onDocumentMouseMove.bind(this),
       false
     );
+    window.removeEventListener('resize', this.onWindowResize.bind(this));
   }
 
   initTheeScene() {
@@ -145,5 +147,12 @@ export class ThreeKnotComponent implements OnInit, OnDestroy {
     this.rotateY =
       ((mouseEvent.y - centerY) / (window.innerWidth / 2)) *
       this.mouseSpeedCoefficient;
+  }
+
+  onWindowResize() {
+    const width = this.threeContainer.nativeElement.offsetHeight;
+    this.camera.aspect = 1;
+    this.camera.updateProjectionMatrix();
+    this.renderer.setSize(width, width);
   }
 }

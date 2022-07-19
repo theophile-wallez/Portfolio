@@ -11,6 +11,7 @@
 
   @media (max-width: 599px) {
     flex-direction: column;
+    margin-bottom: 3rem;
   }
 
   .company {
@@ -21,7 +22,6 @@
     margin: 1rem 2.9rem;
     @media (max-width: 599px) {
       margin: 0;
-      // height: calc(2.5rem + 2 * $company-padding);
       height: auto;
       width: 150px;
 
