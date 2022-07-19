@@ -26,6 +26,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     document.getElementById('loader')?.classList.add('disappear');
     setTimeout(() => {
       this.isPageLoading = false;
+      document.getElementById('body')?.classList.removed('no-scroll');
     }, 500);
   }
   ngOnInit(): void {
