@@ -12,7 +12,7 @@ export class HelperService {
     if (elementName) {
       let element: HTMLElement | null = document.getElementById(elementName);
       if (!element) return;
-      yScroll = element.getBoundingClientRect().top + window.scrollY - 70;
+      yScroll = element.getBoundingClientRect().top + window.scrollY - 95;
     }
 
     window.scroll({

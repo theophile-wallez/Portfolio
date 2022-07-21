@@ -14,7 +14,7 @@ import {
 })
 export class ContactComponent implements OnInit {
   contactForm: FormGroup;
-
+  isSending: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private messageService: MessageService
@@ -29,8 +29,9 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  submit(): void {
+  async submit() {
     if (this.contactForm.invalid) {
+      this.errorToast('All required fields must be completed.');
       let button = document.getElementById('submit-btn');
       if (!button?.classList.contains('animate')) {
         button?.classList.add('animate');
@@ -38,10 +39,34 @@ export class ContactComponent implements OnInit {
           button?.classList.remove('animate');
         }, 750);
       }
+
       return;
     }
-    this.errorToast('The contact form is not finished, yet');
-    // this.successToast();
+    this.isSending = true;
+    try {
+      let response = await this.sendMail(this.contactForm.value);
+      if (response.ok) {
+        this.successToast();
+        this.isSending = false;
+        return;
+      } else {
+        this.isSending = false;
+        this.errorToast();
+      }
+    } catch (error) {
+      this.errorToast('Backend unreachable.');
+    }
+  }
+
+  sendMail(contactForm) {
+    return fetch('https://portfolio-backend.inovaperf.me/sendmail', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(contactForm),
+    });
   }
 
   successToast(): void {

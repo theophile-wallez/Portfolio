@@ -69,10 +69,10 @@
     <!--  -->
     <div class="btn-container">
       <div
-        class="submit-btn hvr-buzz-out"
+        class="submit-btn hvr-buzz-out hvr-pulse"
         id="submit-btn"
         (click)="submit()"
-        [ngClass]="{ disabled: contactForm.invalid }"
+        [ngClass]="{ disabled: contactForm.invalid, sending: isSending }"
       >
         Send message
       </div>

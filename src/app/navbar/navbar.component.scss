@@ -16,8 +16,10 @@ header {
     position: relative;
     font-size: 1.3em;
     font-weight: 600;
-    @media (max-width: 599px) {
-      font-size: 1em;
+    @media (max-width: 850px) {
+      width: 590px;
+    }
+    @media (max-width: 660px) {
       width: 95%;
     }
     user-select: none;
@@ -69,7 +71,7 @@ header {
       height: 3em;
       display: flex;
       align-items: center;
-      @media (max-width: 599px) {
+      @media (max-width: 520px) {
         position: absolute;
         visibility: hidden;
       }
@@ -87,9 +89,6 @@ header {
         color: hsla(0, 0%, 100%, 0.5);
         &:hover {
           color: hsla(0, 0%, 100%, 1);
-        }
-        @media (max-width: 599px) {
-          padding: 0 0.3rem;
         }
       }
     }

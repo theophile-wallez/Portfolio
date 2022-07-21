@@ -53,8 +53,10 @@ form {
   .btn-container {
     user-select: none;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
     .submit-btn {
+      height: fit-content;
       background-color: $color-dark;
       padding: 0.4rem 1rem;
       border-radius: 0.3rem;
@@ -264,4 +266,43 @@ form {
       text-decoration: underline;
     }
   }
+}
+$grow-scale: 1.05;
+$shrink-scale: 0.95;
+@-webkit-keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale($grow-scale);
+    transform: scale($grow-scale);
+  }
+  75% {
+    -webkit-transform: scale($shrink-scale);
+    transform: scale($shrink-scale);
+  }
+}
+@keyframes hvr-pulse {
+  25% {
+    -webkit-transform: scale($grow-scale);
+    transform: scale($grow-scale);
+  }
+  75% {
+    -webkit-transform: scale($shrink-scale);
+    transform: scale($shrink-scale);
+  }
+}
+.hvr-pulse {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.hvr-pulse.sending {
+  -webkit-animation-name: hvr-pulse;
+  animation-name: hvr-pulse;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
 }
