@@ -54,6 +54,7 @@ export class ContactComponent implements OnInit {
         this.errorToast();
       }
     } catch (error) {
+      this.isSending = false;
       this.errorToast('Backend unreachable.');
     }
   }
