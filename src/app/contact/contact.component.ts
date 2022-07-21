@@ -40,7 +40,8 @@ export class ContactComponent implements OnInit {
       }
       return;
     }
-    this.successToast();
+    this.errorToast('The contact form is not finished, yet');
+    // this.successToast();
   }
 
   successToast(): void {
@@ -51,11 +52,11 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  errorToast(): void {
+  errorToast(detail?: string): void {
     this.messageService.add({
       severity: 'error',
       summary: 'Error',
-      detail: 'There was an error when submitting the contact form',
+      detail: detail || 'There was an error when submitting the contact form',
     });
   }
 
