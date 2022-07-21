@@ -43,8 +43,16 @@ export class ContactComponent implements OnInit {
       return;
     }
     this.isSending = true;
+    let contactForm = JSON.parse(JSON.stringify(this.contactForm.value));
+    if (this.contactForm.get('subject')?.value === '') {
+      delete contactForm.subject;
+    }
+    if (this.contactForm.get('name')?.value === '') {
+      delete contactForm.name;
+    }
+
     try {
-      let response = await this.sendMail(this.contactForm.value);
+      let response = await this.sendMail(contactForm);
       if (response.ok) {
         this.successToast();
         this.isSending = false;
