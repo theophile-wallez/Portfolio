@@ -31,8 +31,10 @@ export class ContactComponent implements OnInit {
 
   async submit() {
     if (this.contactForm.invalid) {
-      this.errorToast('All required fields must be completed.');
       let button = document.getElementById('submit-btn');
+      if (!button?.classList.contains('disabled')) {
+        this.errorToast('All required fields must be completed');
+      }
       if (!button?.classList.contains('animate')) {
         button?.classList.add('animate');
         setTimeout(() => {
