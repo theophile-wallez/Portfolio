@@ -44,6 +44,7 @@ export class ContactComponent implements OnInit {
 
       return;
     }
+
     this.isSending = true;
     let contactForm = JSON.parse(JSON.stringify(this.contactForm.value));
     if (this.contactForm.get('subject')?.value === '') {
@@ -58,6 +59,7 @@ export class ContactComponent implements OnInit {
       if (response.ok) {
         this.successToast();
         this.isSending = false;
+        this.resetContactForm();
         return;
       } else {
         this.isSending = false;
@@ -80,6 +82,22 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  resetContactForm() {
+    if (!this.name || !this.email || !this.subject || !this.message) return;
+
+    this.name.setValue('');
+    this.subject.setValue('');
+    this.email.setValue('');
+    this.message.setValue('');
+
+    this.contactForm.markAsUntouched({ onlySelf: false });
+    this.contactForm.markAsPristine({ onlySelf: false });
+    // this.email.markAsUntouched();
+    // this.message.markAsUntouched;
+    // this.email.reset;
+    // this.message.reset();
+  }
+
   successToast(): void {
     this.messageService.add({
       severity: 'success',
@@ -96,8 +114,16 @@ export class ContactComponent implements OnInit {
     });
   }
 
+  get name(): AbstractControl | null {
+    return this.contactForm.get('name');
+  }
+
   get email(): AbstractControl | null {
     return this.contactForm.get('email');
+  }
+
+  get subject(): AbstractControl | null {
+    return this.contactForm.get('subject');
   }
 
   get message(): AbstractControl | null {

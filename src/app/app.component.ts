@@ -23,18 +23,23 @@ export class AppComponent implements OnInit, AfterViewInit {
     window.scrollTo({ top: 0 });
     setTimeout(() => {
       document.getElementById('loader')?.classList.add('disappear');
-      window.removeEventListener('scroll', this.noscroll);
+      window.removeEventListener('scroll', this.noScroll);
       setTimeout(() => {
         this.isPageLoading = false;
       }, 500);
-    }, 1500);
+    }, 1600);
   }
   ngOnInit(): void {
-    window.addEventListener('scroll', this.noscroll);
+    window.addEventListener('scroll', this.noScroll);
     window.addEventListener('scroll', this.onWindowScroll.bind(this));
   }
 
-  noscroll() {
+  ngOnDestroy() {
+    window.removeEventListener('scroll', this.noScroll);
+    window.removeEventListener('scroll', this.onWindowScroll.bind(this));
+  }
+
+  noScroll() {
     window.scrollTo(0, 0);
   }
 

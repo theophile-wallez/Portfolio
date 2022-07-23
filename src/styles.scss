@@ -10,21 +10,23 @@
 body {
   margin: 0 auto;
   max-width: 1144px;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+
   padding-inline: 2rem;
   font-family: $font-light, Helvetica, Arial, sans-serif;
 
   position: relative;
   font-size: 16px;
   color: $color-dark;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background-color: #121316;
-  transition: background-color $scroll-transition-time;
+
+  background-color: white;
+
   ::selection {
     background-color: rgba(79, 79, 79, 0.379);
   }
   &.after-scroll {
-    background-color: white;
     ::selection {
       background-color: #181a1d1f;
     }
