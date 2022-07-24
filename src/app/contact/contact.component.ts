@@ -72,7 +72,7 @@ export class ContactComponent implements OnInit {
   }
 
   sendMail(contactForm) {
-    return fetch('https://portfolio-backend.inovaperf.me/sendmail', {
+    return fetch('http://localhost:8080/sendmail', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
