@@ -15,11 +15,7 @@ var server = app.listen(process.env.PORT || 8080, function () {
   console.log("App now running on port", port);
 });
 
-app.get("/", function (req, res) {
-  res.sendFile(distDir + "index.html");
-});
 app.post("/sendmail", (req, res) => {
-  console.log("request came");
   let contactForm = req.body;
   sendMail(contactForm, (info) => {
     res.send(info);
@@ -51,3 +47,7 @@ async function sendMail(contactForm, callback) {
   let info = await transporter.sendMail(mailOptions);
   callback(info);
 }
+
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "dist/portfolio/index.html"));
+});
