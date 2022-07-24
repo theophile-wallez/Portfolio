@@ -72,7 +72,7 @@ export class ContactComponent implements OnInit {
   }
 
   sendMail(contactForm) {
-    return fetch('http://localhost:8080/sendmail', {
+    return fetch('/sendmail', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
