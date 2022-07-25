@@ -12,7 +12,7 @@
     "description": "A project that aims to connect doctors with their patients and to present the results of psycho-technical tests in the form of graphs. <br/> <br/> This project also includes an admin dashboard to manage doctors and patients.",
     "techs": ["Javascript", "PHP", "SQL", "HTML", "CSS"],
     "imgSrc": "/../../assets/img/projects/psycaptr.webp",
-    "sourceCodeLink": "rBNB",
+    "sourceCodeLink": "Psycaptr",
     "projectLink": "https://psycaptr.inovaperf.me/"
   },
   {
@@ -20,7 +20,7 @@
     "description": "A two-player board game where one player plays the detective Sherlock Holmes while the other player plays the criminal Mr Jack.",
     "techs": ["Java", "Java Swing"],
     "imgSrc": "/../../assets/img/projects/mrjackpocket.webp",
-    "sourceCodeLink": "rBNB"
+    "sourceCodeLink": "MrJackPocket"
   },
   {
     "title": "Space in ISEP",
