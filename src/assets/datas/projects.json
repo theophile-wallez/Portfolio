@@ -1,7 +1,7 @@
 [
   {
     "title": "rBnb",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
+    "description": "A web application that allows individuals to rent a house for a set period of time, as well as to list their own property, much like Airbnb.",
     "techs": ["Angular", "Java Spring", "Firebase", "Swagger"],
     "imgSrc": "/../../assets/img/projects/rbnb.webp",
     "sourceCodeLink": "rBNB",
@@ -9,7 +9,7 @@
   },
   {
     "title": "Psycaptr",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
+    "description": "A school that aims to connect doctors with their patients and to present the results of psychometric tests in the form of graphs. This project also includes an admin dashboard to manage doctors and patients.",
     "techs": ["Javascript", "PHP", "SQL", "HTML", "CSS"],
     "imgSrc": "/../../assets/img/projects/psycaptr.webp",
     "sourceCodeLink": "rBNB",
@@ -17,14 +17,14 @@
   },
   {
     "title": "Mr Jack Pocket",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
+    "description": "A two-player board game where one player plays the detective Sherlock Holmes while the other player plays the criminal Mr Jack.",
     "techs": ["Java", "Java Swing"],
     "imgSrc": "/../../assets/img/projects/mrjackpocket.webp",
     "sourceCodeLink": "rBNB"
   },
   {
     "title": "Space in ISEP",
-    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, qui quaerat? Et, dicta! Illum magni distinctio non eligendi dolores repellat autem sit.",
+    "description": "A Space Invador clone that I made using Java and Java Fx. It was my first coding project and it introduced me to Object-Oriented Programming.",
     "techs": ["Java", "JavaFx"],
     "imgSrc": "/../../assets/img/projects/spaceinisep.webp",
     "sourceCodeLink": "SpaceInIsep"
