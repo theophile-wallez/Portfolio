@@ -6,9 +6,7 @@
         {{ techName }}
       </div>
     </div>
-    <div class="project-description">
-      {{ project.description }}
-    </div>
+    <div class="project-description" [innerHTML]="project.description"></div>
     <div class="btn-container">
       <div
         class="visit-btn"

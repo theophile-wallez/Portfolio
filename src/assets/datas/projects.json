@@ -1,7 +1,7 @@
 [
   {
     "title": "rBnb",
-    "description": "A web application that allows individuals to rent a house for a set period of time, as well as to list their own property, much like Airbnb.",
+    "description": "A web application that allows individuals to rent a house for a set period of time, as well as to list their own property, much like Airbnb. <br/> <br/> This project also includes an instant messaging system made with Firebase.",
     "techs": ["Angular", "Java Spring", "Firebase", "Swagger"],
     "imgSrc": "/../../assets/img/projects/rbnb.webp",
     "sourceCodeLink": "rBNB",
@@ -9,7 +9,7 @@
   },
   {
     "title": "Psycaptr",
-    "description": "A school that aims to connect doctors with their patients and to present the results of psychometric tests in the form of graphs. This project also includes an admin dashboard to manage doctors and patients.",
+    "description": "A project that aims to connect doctors with their patients and to present the results of psycho-technical tests in the form of graphs. <br/> <br/> This project also includes an admin dashboard to manage doctors and patients.",
     "techs": ["Javascript", "PHP", "SQL", "HTML", "CSS"],
     "imgSrc": "/../../assets/img/projects/psycaptr.webp",
     "sourceCodeLink": "rBNB",
