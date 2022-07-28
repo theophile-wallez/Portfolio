@@ -24,7 +24,7 @@
   },
   {
     "title": "Space in ISEP",
-    "description": "A Space Invader clone that I made using Java and Java Fx. It was my first coding project and it introduced me to Object-Oriented Programming.",
+    "description": "A Space Invaders clone that I made using Java and Java Fx. It was my first coding project and it introduced me to Object-Oriented Programming.",
     "techs": ["Java", "JavaFx"],
     "imgSrc": "/../../assets/img/projects/spaceinisep.webp",
     "sourceCodeLink": "SpaceInIsep"
