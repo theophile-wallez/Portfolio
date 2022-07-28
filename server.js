@@ -25,10 +25,10 @@ async function sendMail(contactForm, callback) {
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
     port: 587,
-    secure: false, // true for 465, false for other ports
+    secure: false,
     auth: {
       user: "theophile.wall@gmail.com",
-      pass: "oxnbeencxsomcaqo",
+      pass: process.env.PASSWORD,
     },
   });
 
