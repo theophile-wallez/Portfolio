@@ -2,14 +2,14 @@
   {
     "name": "Ostrum AM",
     "imageName": "ostrum.svg",
-    "description": "An intership during which I developed web apps using Angular and .NET allowing the creation of orders on financial markets ",
+    "description": "An internship during which I developed web apps using Angular and .NET allowing the creation of orders on financial markets ",
     "duration": "6",
     "link": "https://www.ostrum.com/en"
   },
   {
     "name": "DC2Scale",
     "imageName": "dc2scale.svg",
-    "description": "An intership during which I helped building a new datacenter in Vélizy-Villacoublay",
+    "description": "An internship during which I helped building a new datacenter in Vélizy-Villacoublay",
     "duration": "1",
     "link": "https://dc2scale.fr/"
   },
@@ -17,7 +17,7 @@
     "name": "ooeo",
     "imageName": "ooeo.svg",
     "description": "A mission in a degital agency during which I built a website for a client using WordPress and Divi",
-    "duration": "1",
+    "duration": "3",
     "link": "https://ooeo.fr/"
   },
   {
