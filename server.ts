@@ -35,7 +35,6 @@ export function app(): express.Express {
       maxAge: '1y',
     })
   );
-  server.use(bodyParser.json());
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
@@ -44,6 +43,7 @@ export function app(): express.Express {
       providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }],
     });
   });
+  server.use(bodyParser.json());
 
   server.post('/sendmail', (req, res) => {
     let contactForm = req.body;
@@ -60,8 +60,16 @@ function run(): void {
 
   // Start up the Node server
   const server = app();
+  server.use(bodyParser.json());
+
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
+  });
+  server.post('/sendmail', (req, res) => {
+    let contactForm = req.body;
+    sendMail(contactForm, (info) => {
+      res.send(info);
+    });
   });
 }
 
