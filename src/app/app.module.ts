@@ -34,7 +34,7 @@ import { LoaderComponent } from './loader/loader.component';
     LoaderComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,

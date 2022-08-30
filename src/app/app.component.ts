@@ -1,5 +1,5 @@
-import { HelperService } from './helper.service';
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { WindowService } from './window.service';
+import { Component, AfterViewInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
 
 @Component({
@@ -8,12 +8,15 @@ import { MessageService } from 'primeng/api';
   styleUrls: ['./app.component.scss'],
   providers: [MessageService],
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements AfterViewInit {
   title = 'portfolio';
   isPageLoading: boolean = true;
-  constructor() {}
+  constructor(private windowService: WindowService) {}
   elementsToChange: any[] = [];
   ngAfterViewInit(): void {
+    if (!this.windowService.isBrowser) return;
+    window.addEventListener('scroll', this.noScroll);
+    window.addEventListener('scroll', this.onWindowScroll.bind(this));
     this.elementsToChange.push(document.body);
     this.elementsToChange.push(document.getElementById('hero-content'));
     this.elementsToChange.push(document.getElementById('bg-color'));
@@ -23,18 +26,15 @@ export class AppComponent implements OnInit, AfterViewInit {
     window.scrollTo({ top: 0 });
     setTimeout(() => {
       document.getElementById('loader')?.classList.add('disappear');
-      window.removeEventListener('scroll', this.noScroll);
+      window?.removeEventListener('scroll', this.noScroll);
       setTimeout(() => {
         this.isPageLoading = false;
       }, 500);
     }, 1600);
   }
-  ngOnInit(): void {
-    window.addEventListener('scroll', this.noScroll);
-    window.addEventListener('scroll', this.onWindowScroll.bind(this));
-  }
 
   ngOnDestroy() {
+    if (!this.windowService.isBrowser) return;
     window.removeEventListener('scroll', this.noScroll);
     window.removeEventListener('scroll', this.onWindowScroll.bind(this));
   }

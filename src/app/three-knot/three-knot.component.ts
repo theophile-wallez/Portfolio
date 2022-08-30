@@ -1,11 +1,15 @@
+import { WindowService } from '../window.service';
 import {
   Component,
   OnInit,
   ElementRef,
   OnDestroy,
   ViewChild,
+  Inject,
+  PLATFORM_ID,
 } from '@angular/core';
 import * as THREE from 'three';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'three-knot',
@@ -13,7 +17,14 @@ import * as THREE from 'three';
   styleUrls: ['./three-knot.component.scss'],
 })
 export class ThreeKnotComponent implements OnInit, OnDestroy {
-  constructor() {}
+  isBrowser: boolean = false;
+
+  constructor(
+    private windowService: WindowService,
+    @Inject(PLATFORM_ID) private platformId
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
   @ViewChild('threeContainer') threeContainer!: ElementRef;
 
   camera!: THREE.PerspectiveCamera;
@@ -31,6 +42,7 @@ export class ThreeKnotComponent implements OnInit, OnDestroy {
   screenRatio: number = 16 / 9;
 
   ngOnInit(): void {
+    if (!this.isBrowser) return;
     this.handleMeshTexture();
     window.addEventListener(
       'mousemove',
@@ -41,12 +53,14 @@ export class ThreeKnotComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    window.removeEventListener(
-      'mousemove',
-      this.onDocumentMouseMove.bind(this),
-      false
-    );
-    window.removeEventListener('resize', this.onWindowResize.bind(this));
+    if (this.isBrowser) {
+      window.removeEventListener(
+        'mousemove',
+        this.onDocumentMouseMove.bind(this),
+        false
+      );
+      window.removeEventListener('resize', this.onWindowResize.bind(this));
+    }
   }
 
   initTheeScene() {

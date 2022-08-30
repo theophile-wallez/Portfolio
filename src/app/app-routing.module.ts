@@ -7,7 +7,9 @@ const routes: Routes = [
   { path: '**', redirectTo: 'listing', pathMatch: 'full' },
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabledBlocking'
+})],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
