@@ -37,18 +37,22 @@ export function app(): express.Express {
   );
 
   // All regular routes use the Universal engine
+
+  server.use(bodyParser.json());
+  server.use(bodyParser.urlencoded({ extended: true }));
+
+  server.post('/sendmail', (req, res) => {
+    let contactForm = req.body;
+    console.log('contactForm: ', contactForm);
+    sendMail(contactForm, (info) => {
+      res.send(info);
+    });
+  });
+
   server.get('*', (req, res) => {
     res.render(indexHtml, {
       req,
       providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }],
-    });
-  });
-  server.use(bodyParser.json());
-
-  server.post('/sendmail', (req, res) => {
-    let contactForm = req.body;
-    sendMail(contactForm, (info) => {
-      res.send(info);
     });
   });
 
@@ -56,20 +60,13 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  const port = process.env['PORT'] || 4000;
+  const port = 4000;
 
   // Start up the Node server
   const server = app();
-  server.use(bodyParser.json());
 
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
-  });
-  server.post('/sendmail', (req, res) => {
-    let contactForm = req.body;
-    sendMail(contactForm, (info) => {
-      res.send(info);
-    });
   });
 }
 
@@ -80,7 +77,7 @@ async function sendMail(contactForm, callback) {
     secure: false,
     auth: {
       user: 'theophile.wall@gmail.com',
-      pass: process.env['PASSWORD'],
+      pass: 'daoblgimyeddsecs',
     },
   });
 
@@ -99,9 +96,6 @@ async function sendMail(contactForm, callback) {
   callback(info);
 }
 
-// Webpack will replace 'require' with '__webpack_require__'
-// '__non_webpack_require__' is a proxy to Node 'require'
-// The below code is to ensure that the server is run only when not requiring the bundle.
 declare const __non_webpack_require__: NodeRequire;
 const mainModule = __non_webpack_require__.main;
 const moduleFilename = (mainModule && mainModule.filename) || '';
